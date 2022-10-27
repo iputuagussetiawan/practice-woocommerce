@@ -1,0 +1,151 @@
+@use '../config/variable' as *;
+@use '../config/mixin' as *;
+
+.living-room{
+    @include imageRatio(360,201, true,cover, 'image-one');
+    @include imageRatio(487,272, true,cover, 'image-two');
+    padding-top: 128px;
+    padding-bottom: 112px;
+    background-color: #F1E9DF;
+    &__grid{
+        display: grid;
+        grid-template-columns:60% 40% ;
+        align-items: center;
+    }
+
+    &__info-container{
+        padding-left: 128px;
+    }
+
+    &__images-container{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__image-one-container{
+        position: relative;
+        margin-bottom: -68px;
+        z-index: 1;
+    }
+
+    &__image-two-container{
+        margin-left: auto;
+        
+    }
+
+    &--right{
+        @extend .living-room;
+        background-color: $white;
+        .living-room__grid{
+            display: grid;
+            grid-template-columns: 40% 60%;
+        }
+        .living-room__info-container{
+            order: 1;
+            padding-left: 0px;
+            padding-right: 128px;
+        }
+        .living-room__images-container{
+            order: 2;
+        }
+        .living-room__image-one-container{
+            margin-left: auto;
+        }
+        .living-room__image-two-container{
+            
+            margin-left: unset;
+        }
+    }
+
+    @media only screen and (min-width: 1920px) {
+        @include imageRatio(520,290, true,cover, 'image-one');
+        @include imageRatio(680,380, true,cover, 'image-two');
+    }
+
+    @media only screen and (max-width: 1399.98px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        &__grid{
+            grid-template-columns:50% 50% ;
+        }
+        &__info-container {
+            padding-left: 20%;
+        }
+        &__image-one-container{
+            width: 65%;
+        }
+    
+        &__image-two-container{
+            width: 85%;
+        }
+
+        &--right{
+            .living-room__grid{
+                grid-template-columns: 50% 50%;
+            }
+            .living-room__info-container {
+                padding-right: 20%;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        padding-top: 70px;
+        padding-bottom: 70px;
+        &__image-one-container{
+            margin-bottom: -98px;      
+        }
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        &__image-one-container{
+            margin-bottom: -120px;      
+        }
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        &__grid{
+            grid-template-columns:1fr;
+        }
+       
+        &__info-container {
+            order: 2;
+            padding: 0px; 
+        }
+
+        &__images-container{
+            order: 1;
+            margin-bottom: 36px;
+        }
+        
+        &__image-one-container{
+            margin-bottom: -64px;      
+        }
+        
+        &__image-two-container{
+            margin-bottom: 32px;
+        }
+
+        &--right{
+            .living-room__grid{
+                grid-template-columns: 1fr;
+            }
+
+            .living-room__info-container {
+                order: 2;
+                padding: 0px; 
+            }
+    
+            .living-room__images-container{
+                order: 1;
+                margin-bottom: 36px;
+            }
+        }
+    }
+}
+

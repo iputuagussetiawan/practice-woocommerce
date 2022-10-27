@@ -1,0 +1,14 @@
+.section-shop .products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 32px;
+  list-style: none;
+  padding: 0px;
+  gap: 16px;
+}
+.section-shop .woocommerce-LoopProduct-link img {
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnVpbGQvY3NzL3Nob3AuY3NzIiwibWFwcGluZ3MiOiJBQUNJO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FBQVI7QUFHUTtFQUNJO0VBQ0E7QUFEWixDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vc3JjL3Njc3MvcGFnZXMvd29vY29tbWVyY2Uvc2hvcC9zaG9wLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiLnNlY3Rpb24tc2hvcHtcclxuICAgIC5wcm9kdWN0c3tcclxuICAgICAgICBkaXNwbGF5OiBncmlkO1xyXG4gICAgICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogcmVwZWF0KDMsIDFmcik7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMzJweDtcclxuICAgICAgICBsaXN0LXN0eWxlOiBub25lO1xyXG4gICAgICAgIHBhZGRpbmc6IDBweDtcclxuICAgICAgICBnYXA6IDE2cHg7XHJcbiAgICB9XHJcbiAgICAud29vY29tbWVyY2UtTG9vcFByb2R1Y3QtbGlua3tcclxuICAgICAgICBpbWd7XHJcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgICAgICBoZWlnaHQ6IGF1dG87XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9*/

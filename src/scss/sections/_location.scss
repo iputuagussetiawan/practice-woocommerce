@@ -1,0 +1,438 @@
+@use '../config/variable' as *;
+@use '../config/mixin' as *;
+
+.location{
+    @include imageRatio(756,488, false, cover, 'detail-image');
+    @include imageRatio(195,186, false, cover, 'near-image');
+  
+    background-color: #D3DFD8;
+    padding-bottom: 234px;
+    iframe{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    &__detail-image-container{
+       background-color: $black;
+
+       img{
+            opacity: 0.7;
+       }
+    }
+
+    &__detail{
+        position: relative;
+    }
+
+    &__detail-info-container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 70%;
+        color: $white;
+
+    }
+
+    &__detail-title{
+        margin-bottom: 32px;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 51px;
+        color: $white;
+    }
+
+   
+
+    &__detail-location,
+    &__detail-phone,
+    &__detail-email{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: $white;
+    }
+
+
+    &__detail-location{
+        margin-bottom: 50px;
+    }
+
+    &__detail-phone{
+        margin-bottom: 4px;
+
+    }
+
+    &__detail-email{
+        margin-bottom: 8px;
+    }
+
+
+
+    &__detail-btn{
+        margin-top: 32px;
+    }
+
+    &__minute-from{
+        padding: 66px 64px 82px;
+        color: $white;
+        text-align: right;
+    }
+
+    &__minute-icon{
+        display: inline-block;
+        margin-right: 18px;
+        // background:url(../../../src/images/icons//icon-timer.svg);
+        width: 27px;
+        height: 27px;
+        min-width: 30px;
+        // background-size: contain;
+        // background-repeat: no-repeat;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__minute-list{
+        width: 85%;
+        margin-left: auto;
+        padding: 0px;
+        margin-bottom: 0px;
+        list-style: none;
+    }
+
+    &__minute-item{
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        &:last-child{
+            margin-bottom: 0px;
+        }
+    }
+
+    &__minute-value{
+        margin-right: 24px;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 44px;
+        color: #144E2D;
+        min-width: 50px;
+        text-align: left;
+    }
+    &__minute-label{
+        margin-right: 24px;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        max-width: 120px;
+        text-align: left;
+    }
+    &__minute-object{
+        @include elypsis(30,1,1.5);
+        font-weight: 600;
+        text-align: left;
+    }
+
+    &__near-from{
+        background: #D9D9D9;
+        position: relative;
+    }
+
+    &__near-title{
+        margin-bottom: 0px;
+        padding: 55px 0px;
+        font-weight: 700;
+        font-size: 27px;
+        line-height: 33px;
+        color: #144E2D;
+        width: 70%;
+        position: relative;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__near-list{
+        // position: absolute;
+        // bottom: 0;
+        // width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    &__near-item{
+        position: relative;
+
+        &:hover .location__near-image{
+            transform: scale(1.2);
+        }
+    }
+
+    &__near-image-container{
+        overflow: hidden;
+        background-color: $black;
+
+        &:hover .location__near-image{
+            opacity: 1 !important; 
+        }
+    }
+
+    &__near-image{
+        transition: 0.4s ease;
+        opacity: 0.7 !important;
+    }
+
+    &__near-info-label{
+        position: absolute;
+        top: 13px;
+        left: 13px;
+        color: $white;
+        border: 1px solid $white;
+        padding: 6px 8px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 12px;
+
+    }
+
+    &--two{
+        @extend .location;
+
+        .location__detail{
+            order: 1;
+        }
+        .location__map{
+            order: 2;
+        }
+
+        .location__near-from{
+            order: 3;
+        }
+
+        .location__minute-from{
+            order: 4;
+        }
+
+        .location__minute-value{
+            color: #C19E74;
+        }
+    }
+
+    @media only screen and (max-width: 1599.98px) {
+        &__minute-list{
+            width: 90%;
+        }
+        &__minute-item{
+            margin-bottom: 10px;
+        }
+        &__minute-object{
+            @include elypsis(27,1,1.5);
+        }
+        &__near-title{
+            padding: 72px 0px;
+        }
+
+        &__minute-from {
+            padding: 46px 64px;
+        }
+    
+    }
+    @media only screen and (max-width: 1399.98px) {
+        &__detail-image-container{
+            min-height: 450px;
+        }
+        &__detail-info-container{
+            width: 80%;
+        }
+        &__detail-title{
+            font-size: 37px;
+        }
+        &__minute-from {
+            padding: 37px 50px;
+        }
+
+        &__minute-value{
+            font-size: 26px;
+        }
+        &__minute-object
+        {
+            @include elypsis(24,1,1.5);
+        }
+        &__minute-list{
+            width: 100%;
+        }
+        &__near-title{
+            padding: 64px 0px;
+        }
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        &__minute-label {
+            max-width: 72px;
+        }
+        &__minute-value{
+            margin-right: 12px;
+        }
+        &__minute-item{
+            margin-bottom: 8px;
+        }
+        
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        padding-bottom: 180px;
+        iframe{
+            min-height: 450px;
+        }
+        &__grid{
+            grid-template-columns:1fr;
+        }
+       
+        &__minute-label{
+            flex: 0 0 64px;
+        }
+        &__minute-value{
+            margin-right: 14px;
+            font-size: 22px;
+            min-width: 42px;
+
+        }
+        &__minute-from {
+            padding: 50px 72px 50px;
+            //grid-column: span 2
+        }
+        
+      
+        &__near-list {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        &__minute-object
+        {
+            @include elypsis(22,1,1.5);
+        }
+        &__near-title{
+            width: 100%;
+            padding: 42px 72px;
+        }
+
+        &--two{
+            .location__map{
+                order: 1;
+            }
+            .location__detail{
+                order: 2;
+            }
+
+            .location__minute-from{
+                order: 3;
+            }
+            .location__near-from{
+                order: 4;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        padding-bottom: 120px;
+        iframe{
+            min-height: 353px;
+        }
+        &__detail-location,
+        &__detail-phone,
+        &__detail-email{
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+
+
+    @media only screen and (max-width: 575.98px) {
+        &__detail-info-container{
+            width: 100% ;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transform: translate(0px, 0px);
+            padding: 42px 36px;
+            width: 100%;
+        }
+        &__detail-image-container{
+            min-height:426px ;
+        }
+        
+        &__detail-title{
+            margin-bottom: 50px;
+            font-size: 32px;
+            line-height: 32px;
+        }
+
+        &__detail-btn{
+            margin-top: 42px;
+        }
+
+        &__minute-from{
+            padding: 48px 36px;
+            text-align: left;
+        }
+
+        &__minute-item{
+            justify-content: flex-start;
+        }
+
+        &__minute-icon{
+            width: 19px;
+            height: 19px;
+            margin-right: 12px;
+        }
+
+        &__minute-value{
+            min-width: 28px;
+            margin-right: 18px;
+            font-size: 24px;
+            line-height: 29px;
+        }
+        &__minute-label{
+            margin-right: 15px;
+            font-size: 9px;
+            line-height: 11px;
+            max-width: 45px;
+        }
+        &__minute-object{
+            line-height: 29px;
+        }
+        &__near-title{
+
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            padding: 32px 36px;
+            font-size: 16px;
+            line-height: 20px;
+            transform: unset;
+        }
+        &__near-list{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__near-info-label{
+            top: 16.86px;
+            left: 16.43px;
+        }
+
+        &__detail-location,
+        &__detail-phone,
+        &__detail-email{
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+}

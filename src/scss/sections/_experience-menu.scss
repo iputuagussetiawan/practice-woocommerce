@@ -1,0 +1,59 @@
+@use '../config/variable' as *;
+@use '../config/mixin' as *;
+@use '../components/cards/_card-property-logo.scss' as *;
+
+.experience-menu{
+    padding-top: 200px;
+    padding-bottom: 62px;
+    transition: 0.1s ease;
+    margin-bottom: -500px;
+    .nav-item{
+        margin-right: 17.5px;
+        &:last-child{
+            margin-right: 0px;
+        }
+    }
+    .nav-pills .nav-link{
+        padding: 0px;
+        outline: none;
+    }
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        background-color: transparent;
+        .card-property-logo{
+            background-color: $white;
+            &::before{
+                border: 2.5px solid #0BAC4B;
+            }
+        }
+
+        .card-property-logo__logo{
+            filter: unset;
+        }
+    }
+
+    &__title{
+        margin-bottom: 34px;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 51px;
+        color: #231F20;
+    }
+    &__tab{
+        display: inline-flex;
+        justify-content: center;
+        margin-bottom: 0px;
+    }
+
+    @media only screen and (max-width: 1399.98px) {
+        padding-top: 200px;
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        padding-top: 180px;
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        padding-top: 150px;
+        display: none;
+    }
+}

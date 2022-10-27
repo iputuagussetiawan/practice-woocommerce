@@ -1,0 +1,30 @@
+@use '../../../config/variable' as *;
+@use '../../../config/mixin' as *;
+@use '../../../components/cards/_card-address.scss';
+
+.woocommerce-Addresses{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.header-address{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    
+
+    &__title{
+        margin: 0px;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 56px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #29292A;
+    }
+
+    &__edit-btn{
+        font-size: 18px;
+    }
+}

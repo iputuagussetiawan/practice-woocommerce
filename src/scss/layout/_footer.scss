@@ -1,0 +1,122 @@
+@use "../config/_variable.scss" as *;
+@use "../config/_mixin.scss" as *;
+.footer {
+	padding-top: 120px;
+	.navbar-brand{
+		display: inline-block;
+		padding: 0px;
+		margin-bottom: 50px;
+	}
+	&__grid{
+		display: grid;
+		grid-template-columns: 50% 20% 30%;
+		gap: 32px;
+		margin-bottom: 100px;
+	}
+
+	&__title{
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 36px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: #29292A;
+	}
+	&__subtitle{
+		font-style: normal;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 35px;
+		color: #676A6C;
+	}
+
+	&__company-name{
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 36px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: #29292A;
+	}
+
+	&__company-address{
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 35px;
+		color: #676A6C;
+	}
+
+	&__note-title{
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 36px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: #29292A;
+	}
+
+	&__note-item{
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 35px;
+		color: #676A6C;
+	}
+	&__contact-lists{
+		margin-bottom: 20px;
+		padding: 0px;
+		list-style: none;
+
+	}
+
+	&__contact-item{
+		margin-bottom: 10px;
+	}
+
+	&__contact-link{
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 35px;
+		color: #676A6C;
+	}
+
+
+	&__menu-lists{
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		padding: 0px;
+		max-height: 350px;
+		flex-direction: column;
+	}
+	&__menu-item{
+		margin-bottom: 10px;
+	}
+	&__menu-link{
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 35px;
+		color: #676A6C;
+	}
+	&__copyright{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: #607D8B;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 35px;
+		border-top: 1px solid #E0E0E0;
+	}
+	&__copyright-higlight{
+		display: inline-block;
+		color: #afbec5;
+	}
+	&__copyright-link{
+		color: #afbec5;
+	}
+
+
+}

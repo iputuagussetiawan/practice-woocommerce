@@ -1,0 +1,105 @@
+@use "../../config/_variable.scss" as *;
+@use "../../config/_mixin.scss" as *;
+.card-article{
+    display: inline-block;
+    position: relative;
+    @include imageRatio(491,290);
+
+    &:hover &__image{
+        transform: scale(1.2);
+    }
+
+    &__categories-wrapper{
+        position: absolute;
+        top: 0px;
+        right: 24px;
+        z-index: 2;
+    }
+
+    &__category{
+        display: inline-block;
+        background-color: $primary;
+        color: $white;
+        padding: 11px 14px;
+        border-radius: 0px 0px 20px 20px;
+        transition: 0.4s ease;
+
+        &:hover{
+            color: $white;
+            opacity: 0.8;
+        }
+       
+    }
+    &__category-more{
+        display: inline-block;
+        padding: 11px 14px;
+        border-radius: 0px 0px 20px 20px;
+        background-color: #a4a4a4;
+		color: $white;
+        transition: 0.4s ease;
+		&:hover {
+			color: $white;
+		}
+
+    }
+    &__info-container{
+        position: absolute;
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+
+       
+    }
+    &__image-container{
+        overflow: hidden;
+
+        &::after
+        {   
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: #144E2D;
+            mix-blend-mode: multiply;
+            opacity: 0.5;
+
+        }
+    }
+    &__image{
+        transition: 0.4s ease;
+    }
+
+    &__title{
+        @include elypsis(16, 3, 1.5);
+        position: absolute;
+        bottom: 20px;
+        left: 26px;
+        width: calc(100% - 52px);
+        font-weight: 500;
+        color: $white;
+        z-index: 2;
+    }
+
+    &__category--yellow{
+        @extend .card-article__category;
+        background-color: #FFBA0A;
+    }
+    &__category--red{
+        @extend .card-article__category;
+        background-color: #FA2B2B;
+    }
+    &__category--green{
+        @extend .card-article__category;
+        background-color: #06AB4B;
+    }
+    &__category--blue{
+        @extend .card-article__category;
+        background-color: #2663FF;;
+    }
+}
+
+

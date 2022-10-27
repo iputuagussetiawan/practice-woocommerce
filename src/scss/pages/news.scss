@@ -1,0 +1,118 @@
+@use '../config/_variable.scss' as *;
+@use '../config/_mixin.scss' as *;
+@use '../components/cards/_card-news.scss' as *;
+@use '../components/_tabs.scss' as *;
+
+.news{
+    padding-top: 200px;
+    padding-bottom:120px;
+    background-color: #ECF3EF;
+    .card-news{
+        &:first-child{
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+    }
+    &__title{
+        margin-bottom: 43px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 51px;
+    }
+    &__banner-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    @media only screen and (max-width: 1399.98px) {
+        padding-bottom:80px;
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        padding-bottom:70px;
+        &__banner-grid{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        padding-top: 150px;
+        padding-bottom:60px;
+    }
+    @media only screen and (max-width: 767.98px) {
+        padding-top: 142px;
+        padding-bottom:50px;
+        .card-news{
+            &:first-child{
+                grid-row: span 1;
+                grid-column: span 1;
+            }
+        }
+        &__banner-grid{
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &__title{
+            margin-bottom: 24px;
+            font-size: 24px;
+            line-height: 29px;
+        }
+    }
+}
+
+.news-category{
+    background-color: #ECF3EF;
+    padding-bottom: 100px;
+
+    &__tab-container{
+        position: relative;
+        overflow: hidden;
+    }
+    &__grid{
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 85px 18px;
+    }
+
+    @media only screen and (max-width: 1399.98px) {
+        padding-bottom: 80px;
+        
+        &__grid{
+            margin-top: 32px;
+            gap: 72px 18px;
+        }
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        padding-bottom: 70px;
+        &__grid{
+            margin-top: 28px;
+            gap: 64px 18px;
+        }
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        padding-bottom: 60px;
+        &__grid{
+            margin-top: 24px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px 18px;
+        }
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        padding-bottom: 50px;
+        &__grid{
+            margin-top: 20px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        &__tab-container{
+            padding-right: 0px;
+        }
+    }
+}

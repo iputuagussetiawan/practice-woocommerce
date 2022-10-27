@@ -1,0 +1,30 @@
+@use "../config/_mixin.scss" as *;
+@use "../config/_variable.scss" as *;
+
+@use '../components/cards/_card-news.scss' as *;
+
+
+.widget-latest-post{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 72px;
+
+
+    @media only screen and (max-width: 1399.98px) {
+        gap: 64px;
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        gap: 50px;
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        gap: 16px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        gap: 42px;
+        grid-template-columns: 1fr;
+    }
+}

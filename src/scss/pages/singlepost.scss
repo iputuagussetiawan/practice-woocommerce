@@ -1,0 +1,218 @@
+@use '../config/_variable.scss' as *;
+@use '../config/_mixin.scss' as *;
+@use '../components/_widget-latest-post.scss' as *;
+@use '../components/_sidebar.scss' as *;
+.singlepost{
+    @include imageRatio(618,365);
+    @include imageRatio(40,40,true,cover,'author-image');
+    background-color: #ECF3EF;
+    padding-top: 200px;
+    padding-bottom:91px ;
+
+    &__categoies-container{
+        margin-bottom: 32px;
+    }
+
+    &__category{
+        display: inline-block;
+        padding: 8px 25px 8px 25px;
+        border-radius: 0px 0px 16px 16px; 
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        
+        background-color: #06AB4B;
+        color: $white;
+        &:hover{
+            color: $white;
+        }
+    }
+
+
+    &__title{
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+        color: $black;
+
+    }
+
+    &__author{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 42px;
+    }
+
+    &__author-image-container{
+        margin-right: 45px;
+        overflow: hidden;
+        border-radius: 100%;
+    }
+
+    &__author-name{
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #A4A4A4;
+    }
+
+    &__author-date{
+        margin: 0px;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: #A4A4A4;
+    }
+
+    &__content{
+        p{
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            color: #000000;
+        }
+        li{
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            color: #000000;
+        }
+    }
+
+    @media only screen and (max-width: 1399.98px) {
+        padding-bottom: 80px;
+        &__title{
+            margin-bottom: 27px;
+            font-size: 27px;
+            line-height: 32px;
+        }
+        &__author{
+            margin-bottom: 37px;  
+        }
+        &__author-image-container{
+            margin-right: 37px;
+        }
+
+        &__category {
+			padding: 8px 18px 8px 18px;
+			font-weight: 500;
+			font-size: 12px;	
+		}
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        padding-bottom: 70px;
+        &__title{
+            margin-bottom: 24px;
+            font-size: 24px;
+            line-height: 27px;
+        }
+        &__author{
+           margin-bottom: 32px; 
+        }
+        &__author-image-container{
+            margin-right: 32px;
+        }
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        padding-top: 160px;
+        padding-bottom: 60px;
+        &__title{
+            margin-bottom: 22px;
+            font-size: 22px;
+            line-height: 24px;
+        }
+        &__category{
+            font-size: 12px;
+            line-height: 16px;
+        }
+        &__author{
+            margin-bottom: 27px; 
+        }
+        &__author-image-container{
+            margin-right: 27px;
+        }
+        &__author-name{
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        padding-bottom: 50px;
+        &__title{
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        &__author{
+            margin-bottom: 24px; 
+        }
+        &__author-image-container{
+            margin-right: 24px;
+        }
+        &__author-name{
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 4px;
+        }
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        h2,h3,h4{
+            font-size: 20px;
+        }
+        &__category{
+            font-size: 10px;
+            line-height: 14px;
+        }
+        &__author-image-container{
+            margin-right: 22px;
+        }
+    }
+
+
+}
+
+.related-article{
+    padding-bottom: 64px;
+    background-color: #ECF3EF;
+
+    &__title{
+        margin-bottom: 39px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        color: #231F20;
+    }
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 16px;
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        &__title{
+            margin-bottom: 32px;
+        }
+        &__grid{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    @media only screen and (max-width: 767.98px) {
+        padding-bottom: 50px;
+        &__grid{
+           row-gap: 32px;
+        }
+    }
+    @media only screen and (max-width: 575.98px) {
+        &__grid{
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+}

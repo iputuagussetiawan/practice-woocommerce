@@ -1,0 +1,25 @@
+@use "../config/_mixin.scss" as *;
+@use "../config/_variable.scss" as *;
+
+.offcanvas{
+    &.miniShopOffCanvas{
+        width: 520px;
+
+        .offcanvas-header{
+            padding: 30px 30px 0px 30px;
+        }
+
+        .offcanvas-title{
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 56px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #607D8B;
+        }
+
+        .offcanvas-body{
+            padding: 30px;
+        }
+    }
+}

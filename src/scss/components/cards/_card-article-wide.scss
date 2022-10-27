@@ -1,0 +1,120 @@
+@use "../../config/_variable.scss" as *;
+@use "../../config/_mixin.scss" as *;
+.card-article-wide{
+    @include imageRatio(320,194, true);
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+
+    &:hover &__image{
+        transform: scale(1.2);
+    }
+    &__image-container{
+        margin-right: 45px;
+        overflow: hidden;
+    }
+    &__info-container{
+        flex: 1;
+    }
+    &__image{
+        transition: 0.4s ease;
+    }
+
+    &__title{
+        @include elypsis(24, 3, 1.5);
+        height: auto;
+        margin-bottom: 24px;
+        font-weight: 700;
+        color: #000000;
+
+    }
+
+    &__description{
+        @include elypsis(16, 3, 1.5);
+        margin-bottom: 32px;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 16px;
+        color: #A4A4A4;
+    }
+
+    &__btn{
+        padding: 10px 20px;
+        font-weight: 600;
+        font-size: 12.7915px;
+        line-height: 16px;
+        color: #FFFFFF;
+        border-radius: 20px;
+        background: #16B056;
+        transition: 0.4s ease;
+        border: 1px solid #16B056 ;
+        &:hover{
+            background: $white;
+        }
+    }
+
+    @media only screen and (max-width: 1399.98px) {
+        &__image-container{
+            margin-right: 42px;
+        }
+        &__title{
+            @include elypsis(22, 3, 1.5);
+            margin-bottom: 22px;
+        }
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        &__image-container{
+            margin-right: 37px;
+        }
+        &__title{
+            @include elypsis(20, 3, 1.5);
+            margin-bottom: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        &__image-container{
+            margin-right: 32px;
+        }
+        &__title{
+            @include elypsis(18, 3, 1.5);
+            margin-bottom: 18px;
+        }
+        &__description{
+            @include elypsis(14, 3, 1.5);
+        }
+
+        &__btn{
+            padding: 8px 16px;
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+    @media only screen and (max-width: 767.98px) {
+        &__image-container{
+            margin-right: 27px;
+        }
+        &__title{
+            @include elypsis(16, 3, 1.5);
+            margin-bottom: 16px;
+        }
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        flex-wrap: wrap;
+        &__image-container{
+            margin-right: 0px;
+        }
+        &__description{
+            @include elypsis(12, 3, 1.5);
+        }
+        &__btn{
+            font-size: 10px;
+        }
+    }
+
+   
+}
+
+

@@ -1,0 +1,80 @@
+@use '../config/_variable.scss' as *;
+@use '../config/_mixin.scss' as *;
+@use '../components/_tabs.scss' as *;
+@use '../sections/_experience-menu.scss' as *;
+@use '../components/_tabs.scss' as *;
+
+.gallery{
+    @include imageRatio(700,428);
+    padding-top: 500px;
+    padding-bottom:218px;
+    background-color: #ECF3EF;  
+
+    &__title{
+        display: none;
+        margin-bottom: 24px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        color: #231F20;
+    }
+
+    &__grid{
+        width: 100%;
+        display: grid;
+        grid-template-columns:repeat(8,1fr) ;
+        gap: 16px;
+    }
+    
+    &__image-container{
+        &:nth-child(1){
+            grid-column: 1/5;
+        }
+        &:nth-child(2){
+            grid-column: 5/9;
+        }
+        &:nth-child(3){
+            grid-column: 1/6;
+            grid-row: span 2;
+        }
+        &:nth-child(4){
+            grid-column: 6/9;
+        }
+        &:nth-child(5){
+            grid-column: 6/9;
+        }
+        &:nth-child(6){
+            grid-column: 1/3;
+            max-height: 290px;
+        }
+        &:nth-child(7){
+            grid-column: 3/9;
+            max-height: 290px;
+        }
+        &:nth-child(8){
+            grid-column: 1/5;
+        }
+        &:nth-child(9){
+            grid-column: 5/9;
+        }
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        padding-top: 220px;
+        &__title{
+            display: block;
+        }
+        &__container-tab{
+            margin-bottom: 28px;
+            padding-right: 0px;
+            overflow: hidden;
+        }
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        padding-top: 200px;
+        padding-bottom:150px;
+    }
+
+}

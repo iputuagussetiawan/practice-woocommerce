@@ -1,0 +1,56 @@
+@use "../../config/_variable.scss" as *;
+@use "../../config/_mixin.scss" as *;
+
+.card-nav-category{
+    @include imageRatio(432,280);
+    position: relative;
+   
+
+    &:hover &__image{
+        transform: scale(1.2);
+    }
+    
+    &__title{
+        position: absolute;
+        width: 100%;
+        right: 16px;
+        bottom: 16px;
+        left: 16px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 36px;
+        letter-spacing: 0.9px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+
+    &__image-container{
+        overflow: hidden;
+    }
+
+    &__image{
+        transition: 0.4s ease;
+    }
+
+    &--text{
+        @extend .card-nav-category;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        .card-nav-category__title{
+            left: 0;
+            bottom: 0;
+            text-align: center;
+            position: relative;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 35px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #607D8B;
+        }
+    }
+}

@@ -1,0 +1,150 @@
+@use '../config/variable' as *;
+@use '../config/mixin' as *;
+
+.outdoor-facilities{
+    @include imageRatio(485,277, true,cover, 'image-one');
+    @include imageRatio(363,204, true,cover, 'image-two');
+    padding-top: 94px;
+    padding-bottom: 92px;
+    // .experience-content{
+    //     padding-right: 151px;
+    // }
+    &__grid{
+        display: grid;
+        grid-template-columns: 40% 60%;
+        align-items: center;
+    }
+    &__info-container{
+        padding-right: 160px;
+    }
+
+    &__images-container{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__image-one-container{
+        margin-left: auto;
+    }
+
+    &__image-two-container{
+        margin-top: -68px;
+    }
+
+    &--right{
+       @extend .outdoor-facilities;
+       background-color: #F1E9DF;
+       .outdoor-facilities__grid{
+            grid-template-columns:60% 40% ;
+        }
+
+       .outdoor-facilities__images-container{
+            order: 1;
+        }
+
+        .outdoor-facilities__info-container{
+            order: 2;
+            padding-left: 151px;
+            padding-right: 0px;
+        }
+
+        .outdoor-facilities__image-one-container{
+            margin-left: unset;
+        }
+    
+        .outdoor-facilities__image-two-container{
+            margin-top: -68px;
+            margin-left: auto;
+        }
+    }
+
+    @media only screen and (min-width: 1920px) {
+        @include imageRatio(650,371, true,cover, 'image-one');
+        @include imageRatio(480,270, true,cover, 'image-two');
+    }
+
+    @media only screen and (max-width: 1399.98px) {
+       padding: 80px 0px;
+        &__grid{
+            grid-template-columns: 50% 50%;
+        }
+        &__info-container{
+            padding-right: 20%;
+        }
+    
+        &__image-one-container{
+            width: 85%;
+        }
+        &__image-two-container{
+            width: 75%;
+        }
+        &--right{
+            .outdoor-facilities__grid{
+                 grid-template-columns:50% 50% ;
+            }
+            .outdoor-facilities__info-container{
+                padding-left: 20%;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        padding: 70px 0px;
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        padding: 60px 0px;
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        padding: 50px 0px;
+        &__grid{
+            grid-template-columns:1fr;
+        }
+        &__images-container{
+           order: 1;
+           margin-bottom: 36px;
+        }
+        &__info-container{
+            order: 2;
+            padding-left: 20%;
+            padding-right: 0px;
+         }
+        &--right{
+            .outdoor-facilities__grid{
+                 grid-template-columns:1fr;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        &__grid{
+            grid-template-columns:1fr;
+        }
+        &__images-container{
+            order: 1;
+            margin-bottom: 46px;
+        }
+        &__info-container{
+            order: 2;
+          
+        }
+
+        &__image-one-container{
+            width: 75%;
+        }
+        &__image-two-container{
+            width: 65%;
+        }
+        &--right{
+            .outdoor-facilities__grid{
+                 grid-template-columns:1fr;
+            }
+            .outdoor-facilities__info-container{
+                padding-left: 12%;
+            }
+        }
+
+    }
+}

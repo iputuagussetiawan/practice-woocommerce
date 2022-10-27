@@ -1,0 +1,116 @@
+@use '../config/variable' as *;
+@use '../config/mixin' as *;
+
+.pool{
+    @include imageRatio(358,239, true,cover, 'image-one');
+    @include imageRatio(619,278, true,cover, 'image-two');
+    padding-top: 127px;
+    padding-bottom: 135px;
+    &__grid{
+        display: grid;
+        grid-template-columns:  40% 60% ;
+        align-items: center;
+    }
+
+    &__info-container{
+        padding-right: 160px;
+    }
+
+    &__images-container{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__image-one-container{
+        position: relative;
+        margin:0 auto;
+        margin-bottom:-68px;
+        z-index: 2;
+    }
+    &__image-two-container{
+        margin:0 auto;
+        z-index: 1;
+    }
+
+    &--right{
+        @extend .pool;
+        .pool__grid{
+            grid-template-columns:60% 40% ;
+        }
+        .pool__images-container{
+            order: 1;
+        }
+        .pool__info-container{
+            order: 2;
+            padding-right: 0px;
+            padding-left: 120px;
+        }
+    }
+
+    @media only screen and (min-width: 1920px) {
+        @include imageRatio(430,287, true,cover, 'image-one');
+        @include imageRatio(720,323, true,cover, 'image-two');
+    }
+
+    @media only screen and (max-width: 1399.98px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        &__grid{
+            grid-template-columns:  50% 50% ;
+        }
+        &__image-one-container{
+            width: 65%;
+        }
+        &__image-two-container{
+            width: 85%;
+        }
+        &__info-container{
+            padding-right: 20%;
+        }
+
+        &--right{
+            .pool__grid{
+                grid-template-columns:50% 50% ;
+            }
+            .pool__info-container{
+                padding-right: 0px;
+                padding-left: 20%;
+            }
+        }
+    }
+    @media only screen and (max-width: 1199.98px) {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    @media only screen and (max-width: 991.98px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    @media only screen and (max-width: 767.98px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        &__grid{
+            grid-template-columns: 1fr;
+        }
+        &__info-container{
+            order: 2;
+            padding-right: 0px;
+            padding-left: 20%;
+        }
+    
+        &__images-container{
+            order: 1;
+            margin-bottom: 36px;
+        }
+
+        &__image-two-container{
+            width: 100%;
+        }
+        &--right{
+            .pool__grid{
+                grid-template-columns:1fr;
+            }
+        }
+    }
+}

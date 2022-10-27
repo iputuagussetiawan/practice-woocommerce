@@ -1,0 +1,56 @@
+@use '../../config/variable' as *;
+@use '../../config/mixin' as *;
+
+@use '../../components/cards/_card-product.scss';
+
+
+.storefront-sorting{
+    display: grid;
+    grid-template-columns: 1fr 200px;
+}
+
+.woocommerce-pagination{
+    order: 1;
+    grid-column: span 2;
+    ul{
+        padding: 0px;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        list-style: none;
+    }
+    li{
+        span,a{
+            padding: 10px 16px;
+            text-decoration: none;
+            border: 1px solid $border-color;
+            font-size: 12px;
+        }
+
+        span.current{
+            background-color: $primary;
+            color: $white;
+        }
+
+        .next::after,
+        .prev::after{
+            display: none;
+        } 
+    }
+
+  
+}
+
+.woocommerce-notices-wrapper{
+    grid-column: span 2;
+    order: 2;
+}
+
+.woocommerce-ordering{
+    text-align: right;
+    order: 4;
+}
+
+.woocommerce-result-count{
+    order: 3;
+}

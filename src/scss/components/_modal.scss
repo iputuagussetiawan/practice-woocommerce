@@ -1,0 +1,121 @@
+@use "../config/_mixin.scss" as *;
+@use "../config/_variable.scss" as *;
+
+.modal-language{
+    .modal-content{
+        background: #FFFFFF;
+        box-shadow: 18px 16px 18px rgba(0, 0, 0, 0.17);
+        border-radius: 19px;
+    }
+    .modal-body{
+        padding: 26px 21px;
+    }
+
+    .current-lang{
+        .nav-link{
+            background-color: #06AB4B;
+            border-color: #06AB4B;
+            color: $white;
+        }
+    }
+
+    .nav-link{
+        margin-bottom: 13px;
+        padding: 12px 14px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: capitalize;
+        color: #000000;
+        border: 1px solid $black;
+        border-radius: 10px;
+        transition: 0.4s ease;
+
+        img{
+            margin-right:37px;
+            width: 21px !important;
+            height: 21px !important;
+            border-radius: 16px;
+            border: 2px solid $white;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        &:hover{
+            background-color: #06AB4B;
+            border-color: #06AB4B;
+            color: $white;
+        }
+    }
+    &__title{
+        margin-bottom: 29px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: capitalize;
+        color: #000000;
+        text-align: center;
+    }
+}
+
+.modal-thankyou{
+    @include imageRatio(151,151,true);
+    .modal-content{
+        background: #FFFFFF;
+        box-shadow: 18px 16px 18px rgba(0, 0, 0, 0.17);
+        border-radius: 19px;
+    }
+    .modal-body{
+        padding: 65px 24px 52px 24px;
+    }
+
+    .modal-content{
+        text-align: center;
+    }
+
+    .modal-thankyou__image-container{
+        margin-bottom: 21px;
+    }
+
+    .btn-close{
+        position: absolute;
+        top: 18px;
+        right: 24px;
+        left: auto;
+        z-index: 10;
+    }
+
+  
+    &__title{
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 49px;
+        color: $black;
+    }
+
+    &__btn-wrapper{
+        text-align: center;
+        margin-top: 64px;
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        @include imageRatio(90,90,true);
+        &__title{
+            font-size: 37px;
+            line-height: 27px;
+        }
+        &__btn-wrapper {
+            margin-top: 50px
+        }
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        @include imageRatio(80,80,true);
+        &__title{
+            font-size: 32px;
+            line-height: 24px;
+        }
+        &__btn-wrapper {
+            margin-top: 42px
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@use '../config/variable' as *;
+@use '../config/mixin' as *;
+@use '../layout/page-header' as *;
+
+
+.about-us{
+    position: relative;
+    background: $white;
+
+    &__grid{
+        position: relative;
+        top: -100px;
+        display: grid;
+        grid-template-columns:repeat(2, 1fr);
+        gap: 0px;
+    }
+
+    &__info-container{
+        background-color: $gray-100;
+        padding: 42px;
+    }
+
+    &__description-container{
+        padding: 42px;
+        background-color: $white;
+    }
+
+}

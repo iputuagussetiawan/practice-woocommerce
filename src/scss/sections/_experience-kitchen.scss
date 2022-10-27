@@ -1,0 +1,137 @@
+@use '../config/variable' as *;
+@use '../config/mixin' as *;
+
+.kitchen-set{
+    @include imageRatio(477,358, true,cover, 'image-one');
+    @include imageRatio(365,244, true,cover, 'image-two');
+    padding-top: 126px;
+    padding-bottom: 126px;
+    &__grid{
+        display: grid;
+        grid-template-columns:  40% 60% ;
+        align-items: center;
+    }
+
+    &__info-container{
+        padding-right: 160px;
+    }
+
+    &__images-container{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__image-one-container{
+        margin-left: auto;
+    }
+
+    &__image-two-container{
+        margin-top: -68px;
+    }
+
+    &--right{
+        @extend .kitchen-set;
+        .kitchen-set__grid{
+            grid-template-columns:60%  40%  ;
+        }
+
+        .kitchen-set__info-container{
+            padding-left: 160px;
+            padding-right: 0px;
+            order: 2;
+        }
+
+        .kitchen-set__images-container{
+           order: 1;
+        }
+
+        .kitchen-set__image-one-container{
+            margin-left: 0;
+        }
+    
+        .kitchen-set__image-two-container{
+            margin-top: -68px;
+            margin-left: auto;
+        }
+    
+    }
+
+    @media only screen and (min-width: 1920px) {
+        @include imageRatio(680,510, true,cover, 'image-one');
+        @include imageRatio(480,321, true,cover, 'image-two');
+    }
+
+    @media only screen and (max-width: 1399.98px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+        &__grid{
+            display: grid;
+            grid-template-columns:  50% 50% ;
+        }
+
+        &__info-container{
+            padding-right: 20%;
+        }
+
+        &__image-one-container{
+            width: 85%;
+        }
+    
+        &__image-two-container{
+            width: 65%;
+        }
+
+        &--right{
+            .kitchen-set__grid{
+                display: grid;
+                grid-template-columns:  50% 50% ;
+            }
+            .kitchen-set__info-container{
+                padding-left: 20%;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        &__grid{
+            grid-template-columns: 1fr;
+        }
+        &__images-container{
+            order: 1;
+            margin-bottom: 36px;
+        }
+        &__info-container{
+            order: 2;
+            padding-right: 0px;
+            padding-left: 20%;
+        }
+        
+        &--right{
+            .kitchen-set__grid{
+                grid-template-columns:1fr;
+            }
+            .kitchen-set__images-container{
+                order: 1;
+                margin-bottom: 36px;
+            }
+            .kitchen-set__info-container{
+                order: 2;
+            }
+          
+        }
+    }
+}

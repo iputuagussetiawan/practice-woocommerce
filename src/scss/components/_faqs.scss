@@ -1,0 +1,74 @@
+@use "../config/variable" as *;
+
+
+
+.questions{
+    background-color: $secondary;
+
+    &__grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        align-items: flex-start;
+    }
+    &__group{
+        display: grid;
+        row-gap: 1.5rem;
+    }
+    &__item{
+        background-color: $white;
+        border-radius: .25rem;
+
+        &:hover{
+            box-shadow: 0 2px 8px hsla(152, 4%, 15%, .15);
+        }
+    }
+    &__item-title{
+        margin: 0px;
+        font-size: 18px;
+        font-weight: 300;
+    }
+    &__icon{
+        font-size: 1.25rem;
+        color: $primary;
+    }
+    &__description{
+        font-size: 14px;
+        padding: 0 1.25rem 1.25rem 2.5rem;
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+        column-gap: .5rem;
+        padding: .75rem .5rem;
+        cursor: pointer;
+    }
+    &__content{
+        overflow: hidden;
+        height: 0;
+    }
+    &__item,
+    &__header,
+    &__item-title,
+    &__icon,
+    &__description,
+    &__content{
+        transition: .3s;
+    }
+}
+
+/*Rotate icon and add font weight to titles*/
+.accordion-open{
+    & .questions__header,
+    & .questions__content{
+        background-color: $primary;
+    }
+    & .questions__item-title,
+    & .questions__description,
+    & .questions__icon{
+        color: #FFF;
+    }
+    & .questions__icon{
+        transform: rotate(45deg);
+    }
+}

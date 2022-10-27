@@ -1,0 +1,81 @@
+@use "../../config/_variable.scss" as *;
+@use "../../config/_mixin.scss" as *;
+
+.card-testimonial{
+    position: relative;
+    @include imageRatio(133,133, true,cover);
+    text-align: center;
+    border-radius: 20px;
+    height: 100%;
+    padding-bottom: 62px;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 20px;
+        right:0;
+        bottom: 0;
+        left: 0;
+        background-color: $white;
+        border-radius: 18px;
+        z-index: -1;
+    }
+
+    &__image-container{
+        border-radius: 100%;
+        overflow: hidden;
+    }
+
+    &__info-container{
+        padding: 24px 28px 31px 28px;
+
+        p{
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 21px;
+            /* or 175% */
+            text-align: center;
+            color: #383838;
+
+            &:last-child{
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    &__action-container{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding: 24px 28px;
+        background: #F4F3F3;
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    &__name{
+        margin-bottom: 0px;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        color: #0C833E;
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        @include imageRatio(108,108, true,cover);
+
+        &__info-container{
+            padding: 10px 20px 23px 20px;
+            p{
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+        &__action-container{
+            padding: 14px 20px;
+        }
+        &__name{
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 15px;
+        }
+    }
+}

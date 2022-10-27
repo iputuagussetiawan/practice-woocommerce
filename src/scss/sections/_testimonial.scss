@@ -1,0 +1,131 @@
+@use '../config/_variable.scss' as *;
+@use '../config/_mixin.scss' as *;
+@use '../components/cards/_card-testimonial.scss' as *;
+
+.testimonial{
+    @include imageRatio(1512,741);
+    position: relative;
+
+    .container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .swiper-pagination{
+        text-align: right;
+        bottom: auto !important;
+        top: 0px;
+    }
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        border-radius: 50%;
+        background: transparent;
+        opacity: 1;
+        border: 1px solid $white;
+        transition: 0.4s ease;
+        outline: none;
+        &:focus{
+            outline: none;
+        }
+    }
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+        width: 23px;
+        height: 10px;
+        background: $white;
+        border: 1px solid $white;
+        border-radius: 10px;
+    }
+
+    .swiper{
+        padding-top: 61px;
+    }
+
+    .swiper-slide{
+        height: auto;
+    }
+
+    &__image-container{
+        max-height: 741px;
+        min-height: 741px;
+    }
+
+    &__image{
+        opacity: 0.1 !important;
+    }
+
+    &__header{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        z-index: 2;
+    }
+
+    &__title{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: $white;
+    }
+
+    &__pagination-container{
+        min-width: 200px;
+    }
+    &__pagination{
+        text-align: right;
+    }
+    &__wrapper{
+        margin-top: 54px;
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        &__wrapper{
+            margin-top: 47px;
+        }
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        .container{
+            padding: 0px 36px;
+            max-width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        .container{
+            padding: 0px;
+            position: absolute;
+            top: auto;
+            left: 50%;
+            transform: translate(-50%,0px);
+            bottom: 80px;
+        }
+
+        .swiper-wrapper{
+            position: relative;
+            left: 36px;
+        }
+        .swiper-pagination{
+           left: auto !important;
+           right: 36px;
+        }
+        &__image-container{
+            min-height: 700px;
+        }
+        &__title{
+           
+            left: 36px;
+           
+        }
+    }
+
+
+}
+

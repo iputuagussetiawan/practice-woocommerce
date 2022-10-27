@@ -1,0 +1,16 @@
+.section-shop{
+    .products{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 32px;
+        list-style: none;
+        padding: 0px;
+        gap: 16px;
+    }
+    .woocommerce-LoopProduct-link{
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}

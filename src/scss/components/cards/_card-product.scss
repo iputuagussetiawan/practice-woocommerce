@@ -1,0 +1,70 @@
+@use "../../config/_variable.scss" as *;
+@use "../../config/_mixin.scss" as *;
+
+.card-product{
+    //@include imageRatio(330,350, false,cover);
+    padding-bottom: 30px;
+    border-bottom: 1px solid $border-color;
+
+    &:hover .attachment-woocommerce_thumbnail{
+        transform: scale(1.2);
+    }
+    .price{
+        del,
+        ins{
+            font-size: 24px;
+        }
+        del{
+            bdi{
+                font-weight: 500;
+                font-size: 20px;
+                text-align: center;
+                color: rgba(96, 125, 139, 0.5);
+                vertical-align: bottom;
+            }
+            
+        }
+        bdi{
+            font-weight: 700;
+            font-size: 24px;
+            text-align: center;
+            color: #607D8B;
+            vertical-align: middle;
+        }
+    }
+
+    .add_to_cart_button{
+        display: none;
+    }
+
+    .star-rating{
+        display: none;
+    }
+    .onsale{
+        display: none;
+    }
+
+    .attachment-woocommerce_thumbnail{
+        width: 100%;
+        height: auto;
+        transition: 0.4s ease;
+    }
+    &__image-container{
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__info-container{
+        text-align: center;
+    }
+
+    &__title{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 35px;
+        text-align: center;
+        color: #29292A;
+    }
+}
+

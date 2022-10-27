@@ -1,0 +1,33 @@
+@use "../config/_mixin.scss" as *;
+@use "../config/_variable.scss" as *;
+
+
+.pagination{
+    .page-item:first-child .page-link {
+        border-radius: 0px;
+    }
+    .page-item:last-child .page-link {
+        border-radius: 0px;
+    }
+
+    .page-link.active, .active > .page-link {
+        z-index: 3;
+        color:$black;
+        background-color: transparent;
+        border-color: transparent;
+        font-weight: 700;
+    }
+
+    .page-link {
+        padding: 6px 24px;
+        border: none;
+        background-color: transparent;
+    }
+
+    .bi-chevron-right{
+        margin-right: 24px;
+    }
+    .bi-chevron-left{
+        margin-left: 24px;
+    }
+}

@@ -1,0 +1,313 @@
+@use '../config/_variable.scss' as *;
+@use '../config/_mixin.scss' as *;
+
+.banner{
+	@include imageRatio(169,70,true,contain,'logomobile');
+	position: relative;
+	.swiper-pagination{
+		top: 50%;
+		transform: translateY(-50%);
+		bottom: auto !important;
+	}
+	.swiper-pagination-bullet {
+		width: 66.8px;
+		height: 8px;
+		border-radius: 0px;
+		background: transparent;
+		opacity: 1;
+		border: 1px solid $white;
+		transition: 0.4s ease;
+		outline: none;
+		&:focus{
+			outline: none;
+		}
+	}
+	.swiper-pagination-bullet-active {
+		opacity: 1;
+		background-color: $white;
+	}
+	&__top{
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+	}
+
+	&__logomobile-container{
+		position: absolute;
+		top: 32px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 3;
+		display: none;
+	}
+	&__image-container{
+		position: relative;
+		grid-column: 1/13;
+		height: calc(100vh - 117px);
+		width: 100%;
+		min-height: 750px;
+	}
+	&__image{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__info-container{
+		align-items: center;
+    	display: flex;
+		position: absolute;
+		top:0;
+		grid-column: 1/4;
+		width: 100%;
+    	height: 100%;
+		padding-top: 154px;
+		z-index: 2;
+
+		&::after{
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			background: linear-gradient(90.8deg, #000000 0.73%, #000000 59.71%, rgba(0, 0, 0, 0) 99.35%);
+			mix-blend-mode: multiply;
+			opacity: 0.4;
+		}
+	}
+
+	&__content{
+		padding-left:80px;
+		position: relative;
+		z-index: 3;
+	}
+
+	&__title{
+		margin-bottom: 42px;
+		font-weight: 400;
+		font-size: 30px;
+		line-height: 48px;
+		color: #FFFFFF;
+		text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+	}
+
+	&__action-container{
+		display: grid;
+		grid-template-columns: repeat(12,1fr);
+
+	}
+
+	&__pagination-wrapper{
+		position: relative;
+		min-height: 124px;
+		grid-column: 1/4;
+		background-color: #C19E74;
+	
+	}
+
+	&__appdownload-wrapper{
+		grid-column: 4/13;
+		background-color: #D3DFD8;
+		display: flex;
+		align-items: center;
+	}
+
+	&__btnapp-label{
+		padding-left: 151px;
+		margin-bottom: 0px;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 24px;
+		color: #343434;
+	}
+
+	&__btnapp-wrapper{
+		padding: 42px 94px;
+	}
+
+	&__googleplay-link{
+		display: inline-block;
+		max-width: 110px;
+		margin-right: 18px;
+		img{
+			width: auto;
+			height: 33px;
+		}
+	}
+
+	&__appstore-link{
+		display: inline-block;
+		max-width: 110px;
+		img{
+			width: auto;
+			height: 33px;
+		}
+	}
+
+	
+
+
+	@media only screen and (max-width: 1599.98px) {
+		&__info-container{
+			grid-column: 1/6;
+		}
+		&__pagination-wrapper{
+			grid-column: 1/5;
+		}
+		&__appdownload-wrapper{
+			grid-column: 5/13;
+		}
+		
+	
+	}
+
+	@media only screen and (max-width: 1399.98px) {
+		.swiper-pagination-bullet {
+			width: 42px;
+		}
+		
+		&__content{
+			padding-left: 90px;
+		}
+		&__info-container{
+			grid-column: 1/6;
+		}
+		&__pagination-wrapper{
+			grid-column: 1/4;
+		}
+		&__appdownload-wrapper{
+			grid-column: 4/13;
+		}
+		&__btnapp-wrapper {
+			padding: 50px 24px;
+		}
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		
+		&__content{
+			padding-left: 70px;
+		}
+		&__info-container{
+			grid-column: 1/7;
+		}
+		&__btnapp-label {
+			padding-left: 64px;
+		}
+		
+	}
+
+	@media only screen and (max-width: 991.98px) {
+		&__content{
+			padding-left: 50px;
+		}
+		&__info-container{
+			grid-column: 1/8;
+		}
+		&__pagination-wrapper{
+			grid-column: 1/7;
+		}
+		&__appdownload-wrapper{
+			grid-column: 7/13;
+			flex-wrap: wrap;
+		}
+		&__btnapp-wrapper {
+			padding: 16px 24px;
+		}
+
+		&__btnapp-label {
+			padding-top: 16px;
+			padding-left: 24px;
+		}
+
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		&__content{
+			padding-left: 40px;
+		}
+	}
+
+	@media only screen and (max-width: 575.98px) {
+		.swiper-pagination{
+			top: auto;
+			transform: translateY(0px);
+			bottom: 64px !important;
+		}
+		.swiper-pagination-bullet {
+			width: 26.92px;
+			height: 7.51px;
+			border-radius: 9px;
+		}
+		&__logomobile-container{
+			display: block;
+		}
+		&__pagination-wrapper{
+			min-height: auto;
+		}
+		&__image-container{
+			height: 100vh;
+			min-height:320px;
+		}
+		&__info-container{
+			grid-column: 1/13;
+			align-items: flex-end;
+
+			&::after{
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 1;
+				background:  linear-gradient(180deg, rgba(0, 0, 0, 0) 28.44%, #000000 100%);
+				mix-blend-mode: multiply;
+				opacity: 1;
+			}
+		}
+		&__content{
+			padding: 0 36px 120px 36px;
+			width: 100%;
+		}
+
+		&__title{
+			font-size: 24px;
+			line-height: 29px;
+			margin-bottom: 40px;
+		}
+
+		&__btn
+		{
+			display: block;
+			width: 100%;
+		}
+
+		&__pagination-wrapper {
+			grid-column: 1/13;
+		}
+
+		&__appdownload-wrapper{
+			display: none;
+		}
+	}
+
+	// @media only screen and (max-width: 1600px) and (max-height: 900px)  {
+	// 	.swiper-pagination-bullet{
+	// 		width: 50px;
+	// 	}
+	// 	&__info-container{
+	// 		padding-top: 120px;
+	// 	}
+	// 	&__image-container{
+	// 		height: calc(100vh - 120px);
+	// 	}
+	// 	&__btnapp-wrapper{
+	// 		padding: 44px 94px;
+	// 	}
+	// }
+	
+
+}

@@ -1,0 +1,55 @@
+@use "../config/_variable.scss" as *;
+
+label {
+	font-weight: 400;
+
+	@media only screen and (max-width: 1199.98px) {
+		font-size: 15px;
+	}
+}
+
+/* Chrome, Safari, Edge, Opera */
+// input::-webkit-outer-spin-button,
+// input::-webkit-inner-spin-button {
+// 	-webkit-appearance: none;
+// 	margin: 0;
+// }
+
+/* Firefox */
+// input[type="number"] {
+// 	-moz-appearance: textfield;
+// }
+
+/*-----------------------------------------
+//////////////// FORM SETUP ///////////////
+-----------------------------------------*/
+
+.form-control-custom {
+	width: 100%;
+	padding: 16px 16px;
+	border-radius: 0px;
+	box-sizing: border-box;
+	transition: 0.4s ease;
+	border: 1px solid #ECECEC;
+	background-color: transparent;
+
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 15px;
+	color: #3F3E3E;
+
+	&:focus {
+		border: 1px solid $primary;
+		box-shadow: none;
+		outline: none;
+		background-color: transparent;
+	}
+
+	&::placeholder{
+		font-style: italic;
+	}
+}
+/*-----------------------------------------
+//////////////////////////////// FORM SETUP
+-----------------------------------------*/
+

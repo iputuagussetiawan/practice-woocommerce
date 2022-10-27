@@ -1,0 +1,197 @@
+@use '../config/_variable.scss' as *;
+@use '../config/_mixin.scss' as *;
+
+.gm-style .gm-style-iw-c {
+    max-width: 250px !important;
+    padding: 16px !important;
+    background-color: #114728;
+    color: $white;
+    border-radius: 0px;
+}
+
+.gm-style .gm-style-iw-tc::after {
+    background: #114728;
+}
+
+.gm-style-iw-d{
+    overflow: auto !important;
+    h4{
+        font-size: 20px;
+    }
+    p{
+        margin-bottom: 0px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: #A4A4A4;
+    }
+}
+
+.gm-ui-hover-effect>span {
+    background-color: white;
+}
+
+.location{
+    background-color: #ECF3EF;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+
+    &__info-container{
+        min-height: 700px;
+        padding-top: 200px;
+        padding-right: 40px;
+        padding-bottom:91px;
+        grid-column: 1/4;
+        background-color: $white;
+
+    }
+    &__map-container{
+        grid-column: 4/13;
+    }
+
+    &__info-inner{
+        width: 80%;
+        margin-left: auto;
+    }
+
+    &__info-title{
+        margin-bottom: 34px;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 49px;
+        color: #231F20;
+    }
+
+    &__listing{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 64px;
+    }
+
+    &__listing-item{
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: -32px;
+            width: 100%;
+            height: 1px;
+            background-color: #D9D9D9;
+        }
+        &:last-child::before{
+            display: none;
+        }
+    }
+
+    &__name{
+        margin-bottom: 8px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 28px;
+        color: #231F20;
+    }
+
+    &__address,
+    &__phone,
+    &__email{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 28px;
+        color: #231F20;
+    }
+
+    &__address{
+        margin-bottom: 0px;
+    }
+    &__phone{
+        margin-bottom: 4px;
+    }
+    &__email{
+        margin-bottom: 0px;
+    }
+
+    &__map{
+        height: 100%;
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 1599.98px) {
+        &__info-title{
+            font-size: 37px;
+            line-height: 42px;
+        }
+        &__info-container{
+            grid-column: 1/5;
+        }
+        &__map-container{
+            grid-column: 5/13;
+        }
+    }
+
+    @media only screen and (max-width: 1399.98px) {
+        &__info-title{
+            font-size: 32px;
+            line-height: 37px;
+        }
+        &__info-container{
+            grid-column: 1/4;
+        }
+        &__map-container{
+            grid-column: 4/13;
+        }
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        &__info-title{
+            font-size: 27px;
+            line-height: 32px;
+        }
+        &__info-container{
+            grid-column: 1/5;
+        }
+        &__map-container{
+            grid-column: 5/13;
+        }
+    }
+    @media only screen and (max-width: 767.98px) {
+        &__info-title{
+            margin-bottom: 27px;
+            font-size: 24px;
+            line-height: 27px;
+        }
+        &__info-container{
+            grid-column: 1/13;
+            padding: 60px 36px;
+            order: 2;
+        }
+        &__listing{
+            gap: 50px;
+        }
+
+        &__listing-item{
+            &::before{
+                bottom: -25px;
+            }
+        }
+        &__info-inner{
+            width: 100%;
+        }
+
+        &__address{
+            margin-bottom: 32px;
+        }
+        &__map-container{
+            padding-top: 100px;
+            grid-column: 1/13;
+            order: 1;
+            width: 100%;
+            height: 450px;
+        }
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        &__info-container{
+            padding: 50px 36px;
+        }
+    }
+}

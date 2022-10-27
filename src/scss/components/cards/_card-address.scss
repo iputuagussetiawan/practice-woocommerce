@@ -1,0 +1,6 @@
+@use "../../config/_variable.scss" as *;
+@use "../../config/_mixin.scss" as *;
+.card-address{
+    padding: 30px;
+    border: 1px solid $border-color;
+}

@@ -1,0 +1,42 @@
+
+@use "../../config/_variable.scss" as *;
+@use "../../config/_mixin.scss" as *;
+
+.card-property-logo{
+    @include imageRatio(240,90.69, true, contain, 'logo');
+    position: relative;
+    min-width: 310px;
+    padding: 27.5px 35px;
+    background:transparent;
+    border-radius: 25px;
+    transition: 0.4s ease;
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: 1px solid #CED8CF;
+        border-radius: 25px;
+        transition: 0.4s ease;
+    }
+
+    &__logo{
+        filter: grayscale(100%);
+        transition: 0.4s ease;
+    }
+
+    @media only screen and (max-width: 1399.98px) {
+        min-width: 250px;
+    }
+    @media only screen and (max-width: 1199.98px) {
+        min-width: 220px;
+        padding: 24px 32px;
+    }
+    @media only screen and (max-width: 991.98px) {
+        min-width: 180px;
+        padding: 22px 27px;
+    }
+}
