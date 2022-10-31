@@ -1,0 +1,44 @@
+@use "../config/variable" as *;
+
+.breadcrumb{
+    .breadcrumb-item{
+        color: $white;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+        /* identical to box height */
+
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+       
+        &::before{
+            color: $white;
+        }
+        a{
+            color: $white;
+            transition: 0.4s ease;
+            &:hover{
+                color: $primary;
+            }
+        }
+    }
+
+    &.black{
+        .breadcrumb-item{
+            color:#29292A;
+            &.active{
+                color: #BDBDBD;;
+            }
+            &::before{
+                color:#BDBDBD;;
+            }
+            a{
+                color: #29292A;
+                &:hover{
+                    color: $primary;
+                }
+            }
+        }
+    }
+}

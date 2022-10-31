@@ -1,3 +1,5 @@
+@use '../../../config/variable' as *;
+@use '../../../config/mixin' as *;
 .section-shop{
     .products{
         display: grid;
@@ -13,4 +15,70 @@
             height: auto;
         }
     }
+
+   
+
+    .woof_products_top_panel,
+    .woof_show_auto_form.woof_btn_default {
+        display: none !important;
+    }
+
+    .woof_container_inner.woof_container_inner_collection{
+        border: 1px solid $border-color;
+        padding: 40px 30px;
+
+        h4{
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 56px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #29292A;
+        }
+    }
+
+    .icheckbox_square-blue{
+        width: 35px;
+        height: 35px;
+        background-size: cover;
+    }
+
+    .icheckbox_square-blue.hover {
+        background-position: -33px 0;
+    }
+
+    .icheckbox_square-blue.checked {
+        background-position: -69px 0;
+    }
+
+    .woof_checkbox_label.woof_checkbox_label_selected{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 35px;
+        color: #29292A;
+    }
+
+    .woof_reset_search_form{
+        padding: 10px 24px;
+        outline: none;
+        box-shadow: none;
+        border: none;
+        background:$primary;
+        color: $white;
+    }
+
+
+    .woof_checkbox_term{
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .woof_childs_list_opener span{
+        width: 18px;
+        height: 18px;
+    }
+
+    
+
 }

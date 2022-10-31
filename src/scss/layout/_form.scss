@@ -9,22 +9,23 @@ label {
 }
 
 /* Chrome, Safari, Edge, Opera */
-// input::-webkit-outer-spin-button,
-// input::-webkit-inner-spin-button {
-// 	-webkit-appearance: none;
-// 	margin: 0;
-// }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
 
 /* Firefox */
-// input[type="number"] {
-// 	-moz-appearance: textfield;
-// }
+input[type="number"] {
+	-moz-appearance: textfield;
+}
 
 /*-----------------------------------------
 //////////////// FORM SETUP ///////////////
 -----------------------------------------*/
 
-.form-control-custom {
+.form-control-custom,
+.input-text  {
 	width: 100%;
 	padding: 16px 16px;
 	border-radius: 0px;
@@ -52,4 +53,116 @@ label {
 /*-----------------------------------------
 //////////////////////////////// FORM SETUP
 -----------------------------------------*/
+
+/*-----------------------------------------
+////////// SPINNER FORM SETUP /////////////
+-----------------------------------------*/
+.spinner-input {
+	display: flex !important;
+    max-width: 200px;
+	border: 1px solid $border-color;
+    padding: 10px 0px 11px 0px;
+	&__btn-left,
+	&__btn-right {
+		width: 45px;
+		height: 36px;
+		border-radius: 36px !important;
+		background-color: transparent;
+		border: none;
+		color: $primary;
+		padding: 8px;
+		outline: none;
+		&:hover {
+			background-color: $white;
+			border: 1px solid $white;
+			color: $primary;
+		}
+	}
+
+	&__input {
+		text-align: center;
+		height: 39px;
+		width: 100%;
+		padding: 12px 24px;
+		border-radius: 0px !important;
+		border: 1px solid $white;
+		box-sizing: border-box;
+		font-size: 16px;
+		transition: 0.4s ease;
+		&:focus {
+			border: 1px solid $white;
+			box-shadow: none;
+			outline: none;
+		}
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		&__input {
+			border-radius: 4px !important;
+		}
+
+		&__btn-left {
+			margin-right: 12px !important;
+		}
+		&__btn-right {
+			margin-left: 12px !important;
+		}
+	}
+}
+/*-----------------------------------------
+//////////////////////// SPINNER FORM SETUP
+-----------------------------------------*/
+
+input[type=checkbox] + label {
+	display: block;
+	margin: 0.2em;
+	cursor: pointer;
+	padding: 0.2em;
+	font-family: 'Arial';
+
+	font-weight: 400;
+    font-size: 20px;
+    line-height: 35px;
+    color: #29292A;
+
+  }
+  
+  input[type=checkbox] {
+	display: none;
+  }
+  
+  input[type=checkbox] + label:before {
+	content: "\2714";
+	border: 1px solid  #607D8B;
+	border-radius: 0;
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	margin-right: 16px;
+	vertical-align: bottom;
+	color: transparent;
+	transition: .2s;
+	text-align: center;
+  }
+  
+  input[type=checkbox] + label:active:before {
+	//transform: scale(0);
+  }
+  
+  input[type=checkbox]:checked + label:before {
+	background-color: #607D8B;
+	border-color: #607D8B;
+	color: #fff;
+  }
+  
+  input[type=checkbox]:disabled + label:before {
+	//transform: scale(1);
+	border-color: #aaa;
+  }
+  
+  input[type=checkbox]:checked:disabled + label:before {
+	//transform: scale(1);
+	background-color: #F7C28F;
+	border-color: #F7C28F;
+  }
 

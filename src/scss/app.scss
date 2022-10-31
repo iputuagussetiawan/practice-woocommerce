@@ -7,11 +7,13 @@
 @use "base/_typography.scss";
 @use "pages/woocommerce/_general.scss";
 @use "layout/_header.scss";
+@use "layout/_page-header.scss";
 @use "layout/_main.scss";
 @use "layout/_footer.scss";
 @use "layout/_section.scss";
 @use "layout/_form.scss";
 @use "sections/_booking-box.scss";
+@use "components/_breadcrumb.scss";
 @use "components/_buttons.scss";
 @use "components/_social-icon.scss";
 @use "components/_modal.scss";
@@ -21,6 +23,7 @@
 @use "components/_cart.scss";
 @use "components/_offCanvas.scss";
 @use "components/cards/_card-nav-category.scss";
+@use "components/_custom-select2.scss";
 
 @media (min-width: 576px){
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
@@ -52,6 +55,12 @@
 
 .grecaptcha-badge{
     display: none;
+}
+
+//shop loader
+#woof_svg_load_container{
+    width: 50px !important;
+    height: 50px !important;
 }
 
 

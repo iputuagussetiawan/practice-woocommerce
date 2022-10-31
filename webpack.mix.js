@@ -26,5 +26,6 @@ mix.js('src/js/app.js', '/build/js/')
     .sass('src/scss/pages/woocommerce/shop/shop.scss', './build/css/')
     .sass('src/scss/pages/woocommerce/cart/cart.scss', './build/css/')
     .sass('src/scss/pages/woocommerce/content-product.scss', './build/css/')
+    .sass('src/scss/pages/woocommerce/checkout/checkout.scss', './build/css/')
     .sourceMaps();
     

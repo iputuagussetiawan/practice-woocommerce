@@ -1,5 +1,6 @@
 <?php
 $themeVersion = wp_get_theme()->get('Version');
+$currentLang = pll_current_language();
 wp_enqueue_style('shop_css', get_stylesheet_directory_uri() . '/build/css/shop.css', array(), $themeVersion, 'all');
 
 /**
@@ -32,30 +33,84 @@ get_header('shop');
 do_action('woocommerce_before_main_content');
 ?>
 
-<div class="container">
-	<div class="section-shop">
-		<header class="woocommerce-products-header">
-			<?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
-				<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-			<?php endif; ?>
 
-			<?php
-			/**
-			 * Hook: woocommerce_archive_description.
-			 *
-			 * @hooked woocommerce_taxonomy_archive_description - 10
-			 * @hooked woocommerce_product_archive_description - 10
-			 */
-			do_action('woocommerce_archive_description');
-			?>
-		</header>
+<?php
+$productCategory = get_queried_object();
+if (is_product_category()) :
+	$catId			 = $productCategory->taxonomy . '_' . $productCategory->term_id;
+	$categoryPageHeader = get_field('page_header_product_category', $catId);
 
+	if ($categoryPageHeader) :
+		// Image variables.
+		$urlCategoryPageHeader = $categoryPageHeader['url'];
+	endif;
+?>
+
+	<section class="page-header">
+		<?php
+		if ($categoryPageHeader) :
+		?>
+			<div class="page-header__image-container">
+				<img class="page-header__image" src="<?php echo $urlCategoryPageHeader ?>" alt="<?php echo $productCategory->name ?>">
+			</div>
+			<div class="container page-header__info">
+				<h1 class="page-header__title"><?php echo $productCategory->name ?></h1>
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<?php if ($currentLang == 'en') { ?>
+								<a href="<?php echo get_option("siteurl"); ?>">Home</a>
+							<?php } elseif ($currentLang == 'id') { ?>
+								<a href="<?php echo get_option("siteurl"); ?>/id">Beranda</a>
+							<?php } ?>
+						</li>
+						<li class="breadcrumb-item active" aria-current="page"><?php echo $productCategory->name ?></li>
+					</ol>
+				</nav>
+			</div>
+		<?php
+		endif;
+		?>
+	</section>
+<?php else : ?>
+	<section class="page-header">
+		<?php
+		$pageShopID = get_field('shop_link', 'page_link')->ID;
+		$shopImagePageHeader = get_field('page_header_image', $pageShopID);
+		if ($shopImagePageHeader) :
+			$urlShopImagePageHeader = $shopImagePageHeader['url'];
+		endif;
+		?>
+		<div class="page-header__image-container">
+			<img class="page-header__image" src="<?php echo $urlShopImagePageHeader ?>" alt="shop">
+		</div>
+		<div class="container page-header__info">
+			<h1 class="page-header__title">Shop</h1>
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">
+						<?php if ($currentLang == 'en') { ?>
+							<a href="<?php echo get_option("siteurl"); ?>">Home</a>
+						<?php } elseif ($currentLang == 'id') { ?>
+							<a href="<?php echo get_option("siteurl"); ?>/id">Beranda</a>
+						<?php } ?>
+					</li>
+					<li class="breadcrumb-item active" aria-current="page">Shop</li>
+				</ol>
+			</nav>
+		</div>
+
+	</section>
+<?php endif; ?>
+
+<section class="section-shop">
+	<div class="container section-padding--top">
 		<div class="row">
 			<div class="col-md-3">
 				<?php
-				echo do_shortcode('[searchandfilter id="shop_filter"]')
+				//echo do_shortcode('[searchandfilter id="shop_filter"]');
+				echo do_shortcode('[woof]');
 				?>
-
 			</div>
 			<div class="col-md-9">
 
@@ -112,30 +167,26 @@ do_action('woocommerce_before_main_content');
 			</div>
 		</div>
 	</div>
+</section>
+<?php
 
+/**
+ * Hook: woocommerce_after_main_content.
+ *
+ * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+ */
+do_action('woocommerce_after_main_content');
 
-	<?php
+/**
+ * Hook: woocommerce_sidebar.
+ *
+ * @hooked woocommerce_get_sidebar - 10
+ */
+do_action('woocommerce_sidebar');
 
-	/**
-	 * Hook: woocommerce_after_main_content.
-	 *
-	 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-	 */
-	do_action('woocommerce_after_main_content');
-
-	/**
-	 * Hook: woocommerce_sidebar.
-	 *
-	 * @hooked woocommerce_get_sidebar - 10
-	 */
-	do_action('woocommerce_sidebar');
-
-	?>
-</div>
-
+?>
 
 
 <?php
-
 get_footer('shop');
 ?>

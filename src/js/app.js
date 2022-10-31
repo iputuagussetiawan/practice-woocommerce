@@ -28,5 +28,36 @@ jQuery(document).ready(function($){
 	}
 })
 
+$(document).ready(function() {
+    console.log('pricing simulator page')
+    //pageTransitionBooking();
+    $('.spinner-input .btn-spiner').click(function () {
+        console.log('test')
+        var $input = $(this).parents('.spinner-input').find('input.spinner-input__input');
+        console.log($input);
+        if($(this).hasClass('minus')) {
+            var count = parseFloat($input.val()) - 1;
+            count = count < 1 ? 1 : count;
+            if (count < 2) {
+                $(this).addClass('dis');
+            }
+            else {
+                $(this).removeClass('dis');
+            }
+            $input.val(count);
+        }else {
+            var count = parseFloat($input.val()) + 1
+            $input.val(count);
+            if (count > 1) {
+                $(this).parents('.spinner').find(('.minus')).removeClass('dis');
+            }
+        }
+        $input.change();
+        return false;
+    });
+
+    contentAnimation();
+});
+
 
 

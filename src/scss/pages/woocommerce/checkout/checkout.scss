@@ -1,0 +1,77 @@
+
+
+.woocommerce-message, .woocommerce-info, .woocommerce-error, .woocommerce-noreviews, p.no-comments {
+    margin-bottom: 2.617924em;
+    background-color: #0f834d;
+    margin-left: 0;
+    border-radius: 2px;
+    color: #fff;
+    clear: both;
+    border-left: 0.6180469716em solid rgba(0,0,0,.15);
+    padding: 1em 2em 1em 3.5em;
+    position: relative;
+    list-style: none outside;
+}
+
+.woocommerce-info, .woocommerce-noreviews, p.no-comments {
+    background-color: #3d9cd2;
+}
+
+.woocommerce-info a{
+    color: #fff;
+}
+
+#payment .place-order {
+    padding:26px;
+    margin-bottom: 0;
+    float: none;
+    width: 100%;
+    margin-top: 2.617924em;
+}
+
+#payment .payment_methods > li .payment_box, #payment .place-order {
+    background-color: #fafafa;
+}
+
+.woocommerce-checkout-review-order-table{
+    width: 100%;
+    margin-bottom: 32px;
+
+    &:not( .has-background ) tbody tr:nth-child(2n) td, fieldset, fieldset legend {
+        background-color: #fbfbfb;
+    }
+
+    th {
+        background-color: #f8f8f8;
+        font-weight: 700;
+    }
+    thead th,
+    tfoot th {
+        padding: 24px;
+        vertical-align: middle;
+    }
+
+    tbody td,
+    tfoot td{
+        padding: 8px 24px;
+    }
+}
+.wc_payment_methods{
+    padding: 0px;
+}
+
+.woocommerce-message::before, .woocommerce-info::before, .woocommerce-error::before, .woocommerce-noreviews::before, p.no-comments::before {
+    font-family: "Font Awesome 5 Free";
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 1.05em;
+    left: 1.5em;
+    color: rgb(255, 255, 255);
+
+   
+}
+
+input[type=checkbox] {
+    display: inline-block !important;
+}

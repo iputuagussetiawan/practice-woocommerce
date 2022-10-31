@@ -3,93 +3,31 @@
 /*-----------------------------------------
 /////////////// PAGE HEADER ///////////////
 -----------------------------------------*/
-.parallax {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.7;
-}
 
 .page-header {
+	@include imageRatio(1920,469);
 	position: relative;
-	padding: 70px 0px;
-	height: calc(100vh - 128px);
-	background-color: $black;
-	border-bottom: 5px solid $primary;
-	&__title {
+
+	&__image-container{
+		background: linear-gradient(90deg, #1D242D 0%, rgba(29, 36, 45, 0) 100%);
+	}
+	&__image{
+		opacity: 0.4;
+	}
+	&__info{
 		position: absolute;
-		bottom: 150px;
-		margin-bottom: 16px;
-		font-size: 42px;
-		color: $white;
-		text-transform: uppercase;
-		font-weight: 600;
-	}
-	&__subtitle {
-		font-size: 20px;
-		text-transform: uppercase;
-		letter-spacing: 2px;
-	}
-
-	&__description {
-		font-size: 20px;
+		bottom: 8px;
+		left: 50%;
+		transform: translateX(-50%);
 		color: $white;
 	}
 
-	&__detail{
-		padding: 64px;
-		position: relative;
-		backdrop-filter: blur(5px);
-        background: rgba(255, 255, 255, 0.7);
-        box-shadow: -1px 1px 20px -6px rgb(194 190 190 / 28%);
-		z-index: 10;
-	}
-
-	&__item{
-		margin-bottom: 16px;
-	}
-
-	&__item-label{
-		font-weight: 600;
-		margin-bottom: 0px;
-		font-size: 18px;
-	}
-
-	&__item-value{
-		font-size: 18px;
-	}
-
-	
-
-
-	@media only screen and (max-width: 1199.98px) {
-		padding: 50px 0px;
-
-		&::before {
-			opacity: 0.4;
-		}
-
-		&__title {
-			font-size: 36px;
-		}
-	}
-
-	@media only screen and (max-width: 991.98px) {
-		&__title {
-			font-size: 24px;
-		}
-	}
-
-	@media only screen and (max-width: 767.98px) {
-		padding: 32px 0px;
-
-		&__title {
-			font-size: 24px;
-		}
-	
+	&__title{
+		font-weight: 500;
+		font-size: 64px;
+		letter-spacing: 1.8px;
+		text-transform: uppercase;
+		color: $white;
 	}
 }
 /*-----------------------------------------
