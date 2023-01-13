@@ -134,9 +134,9 @@
         list-style: none;
     }
 
-    .quantity{
-        display: inline-block;
-    }
+    // .quantity{
+    //     display: inline-block;
+    // }
 
     .woocommerce-product-attributes
     {
@@ -160,7 +160,9 @@
         margin-bottom: 32px;
     }
     .cart{
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 70%;
     }
     .single_add_to_cart_button{
         margin-left: 24px;
@@ -486,6 +488,8 @@ p.stars.selected a:not(.active)::before {
 .storefront-product-pagination a[rel=next] .storefront-product-pagination__title {
     margin-left: auto
 }
+
+
 
 
 

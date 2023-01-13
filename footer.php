@@ -68,7 +68,6 @@ wp_footer()
                     <li class="footer__menu-item"><a href="" class="footer__menu-link">Premium Series</a></li>
                 </ul>
             </div>
-
         </div>
         <div class="footer__copyright">
             <ul class="social-icons">

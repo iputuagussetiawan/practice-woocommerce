@@ -45,34 +45,30 @@ if (!defined('ABSPATH')) {
 
 				<?php do_action('woocommerce_checkout_before_customer_details'); ?>
 
-				<div class="col2-set row" id="customer_details">
-					<div class="col-md-7">
+				<div class="col2-set row mt-5" id="customer_details">
+					<div class="col-md-6">
 						<?php do_action('woocommerce_checkout_billing'); ?>
 						<?php do_action('woocommerce_checkout_after_customer_details'); ?>
 					</div>
 
-					<div class="col-md-5">
+					<div class="col-md-6">
 						<?php do_action('woocommerce_checkout_shipping'); ?>
-						<?php do_action('woocommerce_checkout_before_order_review_heading'); ?>
 
-						<h3 id="order_review_heading"><?php esc_html_e('Your order', 'woocommerce'); ?></h3>
+					</div>
 
-						<?php do_action('woocommerce_checkout_before_order_review'); ?>
-
-						<div id="order_review" class="woocommerce-checkout-review-order">
-							<?php do_action('woocommerce_checkout_order_review'); ?>
+					<div class="col-md-12 mt-5">
+						<div class="card-customer-order">
+							<?php do_action('woocommerce_checkout_before_order_review_heading'); ?>
+							<h3 class="checkout-title" id="order_review_heading "><?php esc_html_e('Your order', 'woocommerce'); ?></h3>
+							<?php do_action('woocommerce_checkout_before_order_review'); ?>
+							<div id="order_review" class="woocommerce-checkout-review-order">
+								<?php do_action('woocommerce_checkout_order_review'); ?>
+							</div>
+							<?php do_action('woocommerce_checkout_after_order_review'); ?>
 						</div>
-
-						<?php do_action('woocommerce_checkout_after_order_review'); ?>
 					</div>
 				</div>
-
-
-
 			<?php endif; ?>
-
-
-
 		</form>
 	</div>
 </section>

@@ -1,0 +1,6 @@
+@use "../../config/_variable.scss" as *;
+@use "../../config/_mixin.scss" as *;
+.card-customer-order{
+    padding: 40px;
+    border: 1px solid $border-color;
+}

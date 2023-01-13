@@ -1,4 +1,17 @@
+@use  '../../../components/_payment-methods.scss';
+@use  '../../../components/cards/_card-customer-order.scss';
 
+.customer-details{
+    margin-top: 80px;
+}
+.checkout-title{
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 72px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #29292A;
+}
 
 .woocommerce-message, .woocommerce-info, .woocommerce-error, .woocommerce-noreviews, p.no-comments {
     margin-bottom: 2.617924em;
@@ -22,16 +35,13 @@
 }
 
 #payment .place-order {
-    padding:26px;
     margin-bottom: 0;
     float: none;
     width: 100%;
-    margin-top: 2.617924em;
+    margin-top: 32px;
 }
 
-#payment .payment_methods > li .payment_box, #payment .place-order {
-    background-color: #fafafa;
-}
+
 
 .woocommerce-checkout-review-order-table{
     width: 100%;
@@ -54,6 +64,17 @@
     tbody td,
     tfoot td{
         padding: 8px 24px;
+    }
+
+    .product-total{
+        text-align: right;
+    }
+
+    .cart-subtotal,
+    .order-total{
+        td{
+            text-align: right;
+        }
     }
 }
 .wc_payment_methods{

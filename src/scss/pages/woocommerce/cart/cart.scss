@@ -14,14 +14,8 @@
             text-transform: uppercase;
             color: #29292A;
         }
-        .woocommerce-cart-form__cart-item{
-            transition: 0.4s ease;
-            &:hover{
-                background-color: #eff2f3;
-            }
-        }
         .product-thumbnail{
-            max-width: 170px;
+            max-width: 120px;
 
             a{
                 display: inline-block;
@@ -39,12 +33,16 @@
             text-align: center;
             font-weight: 400;
             font-size: 20px;
-            line-height: 35px;
             color: #676A6C;
         }
 
         .coupon{
-            display: inline-block;
+            display: flex;
+            width: 40%;
+        }
+
+        .apply_coupon{
+            min-width: 235px;
         }
 
         .update_cart{
@@ -88,4 +86,9 @@
             padding: 16px 0px;
         }
     }
+}
+.coupon-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

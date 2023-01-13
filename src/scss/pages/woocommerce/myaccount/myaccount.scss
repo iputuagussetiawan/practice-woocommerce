@@ -54,3 +54,11 @@
         line-height: 35px;
     }
 }
+
+.shop_table{
+    width: 100%;
+
+    .woocommerce-orders-table__cell{
+        padding: 16px 0px;
+    }
+}

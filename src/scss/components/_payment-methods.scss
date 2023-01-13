@@ -1,0 +1,28 @@
+@use "../config/_mixin.scss" as *;
+@use "../config/_variable.scss" as *;
+
+.payment-methods{
+    list-style: none;
+
+    &__item{
+        padding: 8px 0px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 35px;
+        color: #607D8B;
+    }
+
+    &__box{
+        margin-left: 30px;
+        padding: 25px 30px;
+        background: #eff2f3;
+        color: #676A6C;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 35px;
+
+        p{
+            margin: 0px;
+        }
+    }
+}

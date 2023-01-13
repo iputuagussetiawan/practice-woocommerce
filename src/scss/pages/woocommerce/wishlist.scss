@@ -1,0 +1,52 @@
+.wishlist{
+    .wishlist-title-container{
+        display:none;
+    }
+    .wishlist_table{
+        width: 100%;
+        margin-top: 80px;
+
+        th{
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 35px;
+            /* identical to box height, or 194% */
+
+            text-align: center;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+
+            /* Color 6 */
+
+            color: #29292A;
+            background-color: #eff2f3;
+        }
+
+        td{
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 35px;
+            /* identical to box height, or 175% */
+
+            /* Color 3 */
+
+            color: #676A6C;
+        }
+
+        .product-thumbnail{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        .product-name,
+        .product-price,
+        .product-stock-status{
+            text-align: left;
+        }
+    }
+    .yith-wcwl-share{
+        display: none;
+    }
+
+}

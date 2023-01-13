@@ -140,19 +140,21 @@ do_action('woocommerce_before_cart'); ?>
 
 				<tr>
 					<td colspan="6" class="actions">
+						<div class="coupon-container">
+							<?php if (wc_coupons_enabled()) { ?>
+								<div class="coupon">
+									<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" />
+									<button type="submit" class="button btn btn-primary apply_coupon" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_attr_e('Apply coupon', 'woocommerce'); ?></button>
+									<?php do_action('woocommerce_cart_coupon'); ?>
+								</div>
+							<?php } ?>
 
-						<?php if (wc_coupons_enabled()) { ?>
-							<div class="coupon">
-								<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" /> <button type="submit" class="button" class="apply_coupon" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_attr_e('Apply coupon', 'woocommerce'); ?></button>
-								<?php do_action('woocommerce_cart_coupon'); ?>
-							</div>
-						<?php } ?>
+							<button type="submit" class="button update_cart btn btn-primary" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
 
-						<button type="submit" class="button update_cart btn btn-primary" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
+							<?php do_action('woocommerce_cart_actions'); ?>
 
-						<?php do_action('woocommerce_cart_actions'); ?>
-
-						<?php wp_nonce_field('woocommerce-cart', 'woocommerce-cart-nonce'); ?>
+							<?php wp_nonce_field('woocommerce-cart', 'woocommerce-cart-nonce'); ?>
+						</div>
 					</td>
 				</tr>
 

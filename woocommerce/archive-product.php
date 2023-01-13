@@ -110,9 +110,19 @@ if (is_product_category()) :
 				<?php
 				//echo do_shortcode('[searchandfilter id="shop_filter"]');
 				echo do_shortcode('[woof]');
+
 				?>
 			</div>
 			<div class="col-md-9">
+				<div class="row justify-content-between">
+					<div class="col-md-6">
+						<?php woocommerce_result_count() ?>
+					</div>
+					<div class="col-md-3 text-end">
+						<?php woocommerce_catalog_ordering() ?>
+					</div>
+				</div>
+
 
 				<?php
 				if (woocommerce_product_loop()) {
@@ -124,7 +134,7 @@ if (is_product_category()) :
 					 * @hooked woocommerce_result_count - 20
 					 * @hooked woocommerce_catalog_ordering - 30
 					 */
-					do_action('woocommerce_before_shop_loop');
+					//do_action('woocommerce_before_shop_loop');
 
 					woocommerce_product_loop_start();
 
@@ -146,6 +156,8 @@ if (is_product_category()) :
 						}
 					}
 
+
+
 					woocommerce_product_loop_end();
 
 					/**
@@ -153,14 +165,16 @@ if (is_product_category()) :
 					 *
 					 * @hooked woocommerce_pagination - 10
 					 */
-					do_action('woocommerce_after_shop_loop');
+					// do_action('woocommerce_after_shop_loop');
+
+					woocommerce_pagination();
 				} else {
 					/**
 					 * Hook: woocommerce_no_products_found.
 					 *
 					 * @hooked wc_no_products_found - 10
 					 */
-					do_action('woocommerce_no_products_found');
+					//do_action('woocommerce_no_products_found');
 				}
 				?>
 
@@ -175,14 +189,14 @@ if (is_product_category()) :
  *
  * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
-do_action('woocommerce_after_main_content');
+//do_action('woocommerce_after_main_content');
 
 /**
  * Hook: woocommerce_sidebar.
  *
  * @hooked woocommerce_get_sidebar - 10
  */
-do_action('woocommerce_sidebar');
+//do_action('woocommerce_sidebar');
 
 ?>
 

@@ -31,6 +31,7 @@ if (empty($product) || !$product->is_visible()) {
 <div <?php wc_product_class('card-product', $product); ?>>
 	<a href="<?php the_permalink(); ?>">
 		<div class="card-product__image-container">
+
 			<?php if (function_exists('woocommerce_template_loop_product_thumbnail')) echo woocommerce_template_loop_product_thumbnail(); ?>
 		</div>
 		<div class="card-product__info-container">
@@ -40,6 +41,10 @@ if (empty($product) || !$product->is_visible()) {
 			<?php if (function_exists('woocommerce_template_loop_rating')) echo woocommerce_template_loop_rating(); ?>
 			<?php if (function_exists('woo_add_compare_button')) echo woo_add_compare_button(); ?>
 			<?php if (function_exists('woocommerce_template_loop_add_to_cart')) echo woocommerce_template_loop_add_to_cart(); ?>
+			<?php
+			echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+			?>
 		</div>
+
 	</a>
 </div>

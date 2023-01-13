@@ -9,58 +9,58 @@
 	}
 	&__grid{
 		display: grid;
-		grid-template-columns: 50% 20% 30%;
+		grid-template-columns:2fr 1fr 1fr;
 		gap: 32px;
 		margin-bottom: 100px;
 	}
 
 	&__title{
 		font-weight: 700;
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 36px;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
-		color: #29292A;
+		color: $black-500;
 	}
 	&__subtitle{
 		font-style: normal;
 		font-weight: 500;
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 35px;
-		color: #676A6C;
+		color: $gray-700;
 	}
 
 	&__company-name{
 		font-weight: 700;
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 36px;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
-		color: #29292A;
+		color: $black-500;
 	}
 
 	&__company-address{
 		font-weight: 500;
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 35px;
-		color: #676A6C;
+		color: $gray-700;
 	}
 
 	&__note-title{
 		font-weight: 700;
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 36px;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
-		color: #29292A;
+		color: $black-500;
 	}
 
 	&__note-item{
 		font-style: normal;
 		font-weight: 400;
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 35px;
-		color: #676A6C;
+		color: $gray-700;
 	}
 	&__contact-lists{
 		margin-bottom: 20px;
@@ -76,9 +76,9 @@
 	&__contact-link{
 		font-style: normal;
 		font-weight: 400;
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 35px;
-		color: #676A6C;
+		color: $gray-700;
 	}
 
 
@@ -96,26 +96,29 @@
 	&__menu-link{
 		font-style: normal;
 		font-weight: 400;
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 35px;
-		color: #676A6C;
+		color: $gray-700;
 	}
 	&__copyright{
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		color: #607D8B;
+		
+		border-top: 1px solid $gray-200;
+	}
+	&__copyright-text{
+		color: $primary;
 		font-weight: 400;
-		font-size: 16px;
+		font-size: 14px;
 		line-height: 35px;
-		border-top: 1px solid #E0E0E0;
 	}
 	&__copyright-higlight{
 		display: inline-block;
-		color: #afbec5;
+		color: $gray-600;
 	}
 	&__copyright-link{
-		color: #afbec5;
+		color: $gray-600;
 	}
 
 

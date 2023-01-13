@@ -9,11 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
-
-
-
-
-
 jQuery(document).ready(function($){
 	var url = window.location.href;
 	url = url.split("/");
@@ -21,10 +16,10 @@ jQuery(document).ready(function($){
 
     console.log(url)
 	if(url == "login") {
-		$("#customer_login .u-column2").remove(); //Remove Registration Div
+		$("#customer_login .login-register__register-container ").addClass('d-none'); //Remove Registration Div
 	}
 	if(url == "register") {
-		$("#customer_login .u-column1").remove(); // Remove Login Div
+		$("#customer_login .login-register__login-container").addClass('d-none'); // Remove Login Div
 	}
 })
 
@@ -55,8 +50,6 @@ $(document).ready(function() {
         $input.change();
         return false;
     });
-
-    contentAnimation();
 });
 
 
