@@ -1,44 +1,46 @@
 @use "../../config/_variable.scss" as *;
 @use "../../config/_mixin.scss" as *;
-.card-register
-{
-    @include imageRatio(590,718,false);
+
+.card-register {
+    @include imageRatio(590, 718, false);
     display: flex;
     align-items: center;
     background-color: $white;
     width: 100%;
-    &__form-container{
+
+    &__form-container {
         width: 50%;
         padding: 50px 80px;
     }
 
-    &__form-row{
+    &__form-row {
         margin-bottom: 30px;
     }
 
-    &__label-container{
+    &__label-container {
         margin-bottom: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    &__label{
+    &__label {
         margin-bottom: 10px;
         font-weight: 400;
         font-size: 18px;
         line-height: 35px;
         color: $black-500;
     }
-    &__required{
+
+    &__required {
         color: $red-100;
     }
 
-    &__image-container{
+    &__image-container {
         width: 50%;
     }
 
-    &__title{
+    &__title {
         margin-bottom: 30px;
         font-weight: 700;
         font-size: 36px;
@@ -48,7 +50,7 @@
         color: $primary;
     }
 
-    &__register{
+    &__register {
         padding: 20px 32px;
         font-size: 18px;
         line-height: 36px;
@@ -56,7 +58,7 @@
         text-transform: uppercase;
     }
 
-    &__lost_password{
+    &__lost_password {
         font-weight: 400;
         font-size: 18px;
         line-height: 35px;
@@ -65,14 +67,16 @@
     }
 
     @media only screen and (max-width: 1199.98px) {
-        &__form-container{
+        
+        &__form-container {
             padding: 32px 42px;
         }
-        &__form-row{
+
+        &__form-row {
             margin-bottom: 20px;
         }
 
-        &__label{
+        &__label {
             margin-bottom: 8px;
             font-size: 16px;
             line-height: 24px;
@@ -84,15 +88,36 @@
             line-height: 32px;
         }
 
-        &__lost_password{
+        &__lost_password {
             font-size: 16px;
             line-height: 32px;
         }
     }
 
     @media only screen and (max-width: 991.98px) {
-        &__form-row{
+        @include imageRatio(800, 600, false);
+        flex-direction: column;
+        &__image-container {
+            width: 100%;
+        }
+        &__form-container {
+            width: 100%;
+        }
+        &__form-row {
             margin-bottom: 16px;
+        }
+
+        &__form-container {
+            padding: 24px 32px;
+        }
+
+        &__label {
+            font-size: 14px;
+            line-height: 16px;
+        }
+        &__lost_password {
+            font-size: 14px;
+            line-height: 16px;
         }
     }
 }

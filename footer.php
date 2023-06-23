@@ -1,7 +1,14 @@
-<?php
-wp_footer()
-?>
-<footer class="footer">
+<div class="offcanvas offcanvas-end miniShopOffCanvas" tabindex="-1" id="miniShopOffCanvas">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Shopping Cart</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <?php echo woocommerce_mini_cart() ?>
+    </div>
+</div>
+<footer class="footer">'
+    <?php echo woocommerce_mini_cart() ?>
     <div class="container">
         <div class="footer__grid">
             <div class="footer__info">
@@ -94,16 +101,9 @@ wp_footer()
         </div>
     </div>
 </footer>
-
-<div class="offcanvas offcanvas-end miniShopOffCanvas" tabindex="-1" id="miniShopOffCanvas">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel">Shopping Cart</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <?php echo woocommerce_mini_cart() ?>
-    </div>
-</div>
+<?php
+wp_footer()
+?>
 </body>
 
 </html>

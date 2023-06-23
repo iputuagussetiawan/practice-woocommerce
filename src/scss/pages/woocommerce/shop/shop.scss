@@ -1,7 +1,9 @@
 @use '../../../config/variable' as *;
 @use '../../../config/mixin' as *;
-.section-shop{
-    .products{
+
+.section-shop {
+
+    .products {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         margin-bottom: 32px;
@@ -9,25 +11,26 @@
         padding: 0px;
         gap: 16px;
     }
-    .woocommerce-LoopProduct-link{
-        img{
+
+    .woocommerce-LoopProduct-link {
+        img {
             width: 100%;
             height: auto;
         }
     }
 
-   
+
 
     .woof_products_top_panel,
     .woof_show_auto_form.woof_btn_default {
         display: none !important;
     }
 
-    .woof_container_inner.woof_container_inner_collection{
+    .woof_container_inner.woof_container_inner_collection {
         border: 1px solid $border-color;
         padding: 40px 30px;
 
-        h4{
+        h4 {
             font-weight: 500;
             font-size: 28px;
             line-height: 56px;
@@ -37,7 +40,7 @@
         }
     }
 
-    .icheckbox_square-blue{
+    .icheckbox_square-blue {
         width: 35px;
         height: 35px;
         background-size: cover;
@@ -51,19 +54,19 @@
         background-position: -69px 0;
     }
 
-    .woof_checkbox_label.woof_checkbox_label_selected{
+    .woof_checkbox_label.woof_checkbox_label_selected {
         font-weight: 400;
         font-size: 20px;
         line-height: 35px;
         color: #29292A;
     }
 
-    .woof_reset_search_form{
+    .woof_reset_search_form {
         padding: 10px 24px;
         outline: none;
         box-shadow: none;
         border: none;
-        background:$primary;
+        background: $primary;
         color: $white;
     }
 
@@ -74,11 +77,63 @@
         cursor: pointer;
     }
 
-    .woof_childs_list_opener span{
+    input[type=checkbox] + label {
+        display: block;
+        cursor: pointer;
+        font-family: 'Arial';
+    
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 35px;
+        color: #29292A;
+    
+      }
+      
+      input[type=checkbox] {
+    	display: none;
+      }
+      
+    input[type=checkbox] + label:before
+    {
+        content: "\2714";
+        border: 1px solid  #607D8B;
+        border-radius: 0;
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        margin-right: 16px;
+        vertical-align: bottom;
+        color: transparent;
+        transition: .2s;
+        text-align: center;
+    }
+    
+    input[type=checkbox] + label:active:before {
+    //transform: scale(0);
+    }
+    
+    input[type=checkbox]:checked + label:before {
+        background-color: $white;
+        border-color: #607D8B;
+        color: #607D8B;
+    }
+    
+    input[type=checkbox]:disabled + label:before {
+        //transform: scale(1);
+        border-color: #aaa;
+    }
+    
+    input[type=checkbox]:checked:disabled + label:before {
+        //transform: scale(1);
+        background-color: #F7C28F;
+        border-color: #F7C28F;
+    }
+
+    .woof_childs_list_opener span {
         width: 18px;
         height: 18px;
     }
 
-    
+
 
 }

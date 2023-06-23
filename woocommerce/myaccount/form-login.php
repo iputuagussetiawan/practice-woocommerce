@@ -21,6 +21,11 @@ if (!defined('ABSPATH')) {
 }
 $themeVersion = wp_get_theme()->get('Version');
 wp_enqueue_style('register_css', get_stylesheet_directory_uri() . '/build/css/register.css', array(), $themeVersion, 'all');
+
+$pageLoginID = get_field('login_link', 'page_link')->ID;
+$pageRegisterID = get_field('register_link', 'page_link')->ID;
+$loginLink = get_permalink($pageLoginID);
+$registerLink = get_permalink($pageRegisterID);
 ?>
 
 <?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
@@ -75,6 +80,9 @@ wp_enqueue_style('register_css', get_stylesheet_directory_uri() . '/build/css/re
 
 								<?php do_action('woocommerce_login_form_end'); ?>
 							</form>
+							<div class="text-center">
+								<p>Don't Have an Account? <a href="<?php echo $registerLink ?>">Sign up</a></p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -106,14 +114,14 @@ wp_enqueue_style('register_css', get_stylesheet_directory_uri() . '/build/css/re
 
 								<?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
 
-									<div class="mb-3  woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+									<div class="mb-4  woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 										<label class="form-label" for="reg_password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
 										<input type="password" class="form-control-custom woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" autocomplete="new-password" />
 									</div>
 
 								<?php else : ?>
 
-									<p><?php esc_html_e('A link to set a new password will be sent to your email address.', 'woocommerce'); ?></p>
+									<!-- <p><?php esc_html_e('A link to set a new password will be sent to your email address.', 'woocommerce'); ?></p> -->
 
 								<?php endif; ?>
 
@@ -121,12 +129,16 @@ wp_enqueue_style('register_css', get_stylesheet_directory_uri() . '/build/css/re
 
 								<p class="woocommerce-form-row form-row d-grid gap-2">
 									<?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
-									<button type="submit" class="btn btn-primary card-register__register  woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>"><?php esc_html_e('Register', 'woocommerce'); ?></button>
+									<button type="submit" class="btn btn-primary woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>"><?php esc_html_e('Register', 'woocommerce'); ?></button>
 								</p>
 
 								<?php do_action('woocommerce_register_form_end'); ?>
 
 							</form>
+
+							<div class="text-center">
+								<p>Already have an account? <a href="<?php echo $loginLink ?>">Sign In</a></p>
+							</div>
 
 						</div>
 

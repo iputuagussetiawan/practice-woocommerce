@@ -17,14 +17,16 @@
  * @package WooCommerce\Templates
  * @version 5.2.0
  */
+?>
 
+<?php
 defined('ABSPATH') || exit;
 
 do_action('woocommerce_before_mini_cart'); ?>
 
 <?php if (!WC()->cart->is_empty()) : ?>
-
-	<div class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr($args['list_class']); ?>">
+	<ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr($args['list_class']); ?>">
+	<!-- <ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr($args['list_class']); ?>"> -->
 		<?php
 		do_action('woocommerce_before_mini_cart_contents');
 
@@ -38,7 +40,7 @@ do_action('woocommerce_before_mini_cart'); ?>
 				$product_price     = apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key);
 				$product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
 		?>
-				<div class="woocommerce-mini-cart-item <?php echo esc_attr(apply_filters('woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key)); ?>">
+				<li class="woocommerce-mini-cart-item <?php echo esc_attr(apply_filters('woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key)); ?>">
 					<?php
 					echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						'woocommerce_cart_item_remove_link',
@@ -54,34 +56,26 @@ do_action('woocommerce_before_mini_cart'); ?>
 					);
 					?>
 					<?php if (empty($product_permalink)) : ?>
-						<?php echo $thumbnail; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+						<?php echo $thumbnail . wp_kses_post($product_name); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
 						?>
 					<?php else : ?>
 						<a href="<?php echo esc_url($product_permalink); ?>">
-							<?php echo $thumbnail; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+							<?php echo $thumbnail . wp_kses_post($product_name); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
 							?>
 						</a>
 					<?php endif; ?>
-					<div class="cart-info">
-						<h3 class="woocommerce-mini-cart-title">
-							<?php
-							echo wp_kses_post($product_name)
-							?>
-						</h3>
-
-						<?php echo wc_get_formatted_cart_item_data($cart_item); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
-						?>
-						<?php echo apply_filters('woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf('%s &times; %s', $cart_item['quantity'], $product_price) . '</span>', $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
-						?>
-					</div>
-				</div>
+					<?php echo wc_get_formatted_cart_item_data($cart_item); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+					?>
+					<?php echo apply_filters('woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf('%s &times; %s', $cart_item['quantity'], $product_price) . '</span>', $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+					?>
+				</li>
 		<?php
 			}
 		}
 
 		do_action('woocommerce_mini_cart_contents');
 		?>
-	</div>
+	</ul>
 
 	<p class="woocommerce-mini-cart__total total">
 		<?php
@@ -103,6 +97,15 @@ do_action('woocommerce_before_mini_cart'); ?>
 <?php else : ?>
 
 	<p class="woocommerce-mini-cart__empty-message"><?php esc_html_e('No products in the cart.', 'woocommerce'); ?></p>
+
+	<!-- <div class="woocommerce-mini-cart__empty-message">
+			<div class="mini-cart-empty">
+				<img src="/wp-content/themes/cow-style-child-theme/images/cart-empty.svg"/>
+				<p class="mini-cart-empty-title"><?php echo pll__('Your cart is empty'); ?></p>
+				<p><?php echo pll__('Add something to make it happy'); ?></p>
+				<a href="/shop-now" class="btn btn-primary"><?php echo pll__('SHOP NOW'); ?></a>
+			</div>
+		</div> -->
 
 <?php endif; ?>
 

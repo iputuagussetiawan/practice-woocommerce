@@ -4,8 +4,8 @@
 .woocommerce-mini-cart{
     list-style: none;
     .woocommerce-mini-cart-item{
-        margin-bottom: 32px;
-        padding-bottom: 32px;
+        margin-bottom: 24px;
+        padding-bottom: 24px;
         position: relative;
         display: flex;
         border-bottom: 1px solid #ECECEC;
@@ -22,19 +22,19 @@
     }
 
     .cart-info{
-        padding-left: 30px;
+        padding-left: 24px;
     }
 
     .woocommerce-mini-cart-title{
         font-weight: 400;
-        font-size: 20px;
-        line-height: 35px;
+        font-size: 18px;
+        line-height: 24px;
         color: #29292A;
     }
 
     .attachment-woocommerce_thumbnail{
-        max-width: 150px;
-        max-height: 150px;
+        max-width: 120px;
+        max-height: 120px;
         border: 1px solid #ECECEC;
     }
 
@@ -55,8 +55,8 @@
 
     .woocommerce-Price-amount{
         font-weight: 500;
-        font-size: 20px;
-        line-height: 35px;
+        font-size: 18px;
+        line-height: 28px;
         color: #607D8B;
     }
 
@@ -65,8 +65,8 @@
         justify-content: space-between;
         padding-bottom: 20px;
         font-weight: 500;
-        font-size: 24px;
-        line-height: 35px;
+        font-size: 18px;
+        line-height: 24px;
         color: #607D8B;
         border-bottom: 1px solid #ECECEC;
     }
