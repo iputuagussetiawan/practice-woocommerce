@@ -105,13 +105,41 @@ if (is_product_category()) :
 
 <section class="section-shop">
 	<div class="container section-padding--top">
+		<?php
+		/**
+		 * Functions hooked in to storefront_before_content
+		 *
+		 * @hooked storefront_header_widget_region - 10
+		 * @hooked woocommerce_breadcrumb - 10
+		 */
+		do_action( 'storefront_before_content' );
+		?>
+		<?php 
+			do_action('woocommerce_before_main_content');
+		?>
 		<div class="row">
 			<div class="col-md-3">
+			<?php 
+				//show curr switcher
+				if ( function_exists( 'wc_get_currency_switcher_markup' ) ) {
+					$instance = [
+						'symbol' => true,
+						'flag'   => false,
+					];
+					$args = [];
+					echo wc_get_currency_switcher_markup( $instance, $args );
+
+				}
+			?>
 				<?php
 				//echo do_shortcode('[searchandfilter id="shop_filter"]');
 				echo do_shortcode('[woof]');
 
+				
+				
+
 				?>
+				
 			</div>
 			<div class="col-md-9">
 				<div class="row justify-content-between">
